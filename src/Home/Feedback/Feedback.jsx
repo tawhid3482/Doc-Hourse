@@ -21,14 +21,13 @@ const Feedback = () => {
     <div className="my-10">
       <div className="">
         <SectionTitle title={"What Our Patients Says"}></SectionTitle>
-        <p className="text-center text-base">
+        <p className="text-center text-base md:w-4/5 lg:w-10/12 mx-auto">
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem
           accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
           ab illo inve ntore veritatis et quasi architecto beatae vitae dicta
           sunt explicabo.
         </p>
       </div>
-      <div className=""></div>
       <div className="">
         <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
           {Feedback?.map((review) => (
