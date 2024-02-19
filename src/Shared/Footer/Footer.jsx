@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../../assets/images/Screenshot_2024-02-17_192626-removebg-preview.png";
 const Footer = () => {
   return (
@@ -21,9 +22,9 @@ const Footer = () => {
           <a className="link link-hover">About Us</a>
           <a className="link link-hover">Service</a>
           <a className="link link-hover">Doctors</a>
-          <a className="link link-hover">Departments</a>
           <a className="link link-hover">Online Payment</a>
           <a className="link link-hover">Contact Us</a>
+          <Link to='https://protfolio-52046.web.app' className="link link-hover">Developer Info</Link>
         </nav>
         <nav>
           <h6 className="footer-title">Doc House Services</h6>
