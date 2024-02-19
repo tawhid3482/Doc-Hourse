@@ -1,5 +1,6 @@
 import Banner from "./Banner/Banner";
 import Contacts from "./Contacts/Contacts";
+import Feedback from "./Feedback/Feedback";
 import Service from "./Service/Service";
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
             <Banner></Banner>
             <Service></Service>
             <Contacts></Contacts>
+            <Feedback></Feedback>
         </div>
     );
 };
