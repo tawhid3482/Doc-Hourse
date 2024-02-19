@@ -16,11 +16,11 @@ const Service = () => {
               quae ab illo inve ntore veritatis et quasi architecto beatae vitae
               dicta sunt explicabo.
             </h1>
-            <div className="flex-col lg:flex-row  my-8 gap-5">
+            <div className="flex-col lg:flex-row  my-8 gap-3">
               <button className="btn bg-red-300 text-black">
                 Cavity Protection
               </button>
-              <button className="btn bg-red-300 my-2 mx-2 lg:my-0 text-black">
+              <button className="btn bg-red-300 my-2 mx-1 lg:my-0 text-black">
                 Cosmetic Dentisty
               </button>
               <button className="btn bg-red-300 text-black">

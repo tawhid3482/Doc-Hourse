@@ -6,7 +6,7 @@ import { BsTelephoneOutbound } from "react-icons/bs";
 const Contacts = () => {
   return (
     <div>
-      <div className="grid md:grid-cols-2 flex-col lg:flex-row lg:flex lg:justify-between lg:items-center gap-5 p-10">
+      <div className="grid md:grid-cols-2 flex-col lg:flex-row lg:flex lg:justify-between items-center gap-5 md:p-10 p-5">
         <div className="bg-green-800 p-4  w-80 h-40 text-white ">
           <div className="flex items-center gap-5 mt-5 ml-7">
             <GoClock className="text-white text-3xl"></GoClock>
