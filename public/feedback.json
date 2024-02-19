@@ -1,0 +1,30 @@
+[
+    {
+        "id":"01",
+        "name":"Rony Sorker",
+        "title":"degiter Creator",
+        "description":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo exercitationem neque illum magni! Asperiores ullam vel, ipsum animi nulla libero ratione nesciunt quisquam sapiente, cum dignissimos possimus, numquam ducimus at!",
+        "img":"https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?cs=srgb&dl=pexels-mohamed-abdelghaffar-771742.jpg&fm=jpg"
+        },
+    {
+        "id":"02",
+        "name":"Rony Sorker",
+        "title":"degiter Creator",
+        "description":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo exercitationem neque illum magni! Asperiores ullam vel, ipsum animi nulla libero ratione nesciunt quisquam sapiente, cum dignissimos possimus, numquam ducimus at!",
+        "img":"img"
+        },
+    {
+        "id":"03",
+        "name":"Rony Sorker",
+        "title":"degiter Creator",
+        "description":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo exercitationem neque illum magni! Asperiores ullam vel, ipsum animi nulla libero ratione nesciunt quisquam sapiente, cum dignissimos possimus, numquam ducimus at!",
+        "img":"img"
+        },
+    {
+        "id":"04",
+        "name":"Rony Sorker",
+        "title":"degiter Creator",
+        "description":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo exercitationem neque illum magni! Asperiores ullam vel, ipsum animi nulla libero ratione nesciunt quisquam sapiente, cum dignissimos possimus, numquam ducimus at!",
+        "img":"img"
+        }
+]
