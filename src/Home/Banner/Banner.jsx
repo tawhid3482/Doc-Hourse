@@ -5,7 +5,7 @@ const Banner = () => {
   return (
     <div className=''>
      <div  className="relative ">
-        <img src={logo} className='h-[480px] md:h-screen' alt="" />
+        <img src={logo} className='h-[480px] md:h-screen w-full' alt="" />
        <div className="absolute -mt-[460px]  md:-mt-[400px] lg:-mt-[600px] p-5">
        <div className="flex-col md:flex-row md:flex md:justify-between md:items-center ">
         <div className=" ">
