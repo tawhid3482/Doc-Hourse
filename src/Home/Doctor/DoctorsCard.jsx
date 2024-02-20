@@ -8,7 +8,7 @@ const DoctorsCard = ({ doctor }) => {
 //   console.log(doctor);
   return (
     <div>
-      <div className="card w-96 bg-base-100 shadow-xl">
+      <div className="card border border-green-700 md:border-none w-80 my-3 md:my-0 md:w-96 bg-base-100 shadow-xl">
         <figure className="px-10 pt-10">
           <img
             src={doctor?.img}

@@ -30,8 +30,8 @@ const Email = () => {
   return (
     <div>
       <div className="relative">
-        <img src={background} className="h-[850px] md:h-[550px]" alt="" />
-        <div className="absolute -mt-[850px] md:-mt-[540px] lg:-mt-[550px] text-white p-10">
+        <img src={background} className="w-full h-[900px] md:h-[550px]" alt="" />
+        <div className="absolute -mt-[880px] md:-mt-[540px] lg:-mt-[550px] text-white p-10">
           <div className="flex-col md:flex-row md:flex md:justify-between  gap-8">
             <div className=" md:w-1/3">
               <p className="text-4xl my-3 font-bold text-white">
@@ -51,7 +51,7 @@ const Email = () => {
                 <p className="text-lg">Dhanmondi, Dhaka, Bangladesh</p>
               </div>
             </div>
-            <div className="md:w-2/3">
+            <div className="md:w-2/3 my-5 md:my-0">
             <form  className="" onSubmit={sendEmail}>
             <div className="text-white flex justify-around items-center gap-3">
               <input
