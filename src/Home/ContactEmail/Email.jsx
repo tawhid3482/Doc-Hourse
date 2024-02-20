@@ -1,15 +1,31 @@
 import background from "../../assets/Banner/Rectangle.png";
 import { FiPhoneOutgoing } from "react-icons/fi";
 import { CiLocationOn } from "react-icons/ci";
-import { useForm } from "react-hook-form";
 
 const Email = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = (data) => console.log(data);
+    // const form = useRef();
+
+    const sendEmail = (e) => {
+      e.preventDefault();
+      emailjs
+        .sendForm(
+          "service_sv7i17n",
+          "template_nf7vqxk",
+          form.current,
+          "Q3TAuECGDlUuLdAnW"
+        )
+        .then(
+          (result) => {
+              console.log(result.text);
+              if (result.text === 'OK') {
+                form.current.reset(); 
+              }
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+    };
 
   return (
     <div>
@@ -36,21 +52,68 @@ const Email = () => {
               </div>
             </div>
             <div className="md:w-2/3">
-              <div className="">
-                <form onSubmit={handleSubmit(onSubmit)}>
-                  
-                  <input defaultValue="test" {...register("example")} />
-
-                
-                  <input {...register("exampleRequired", { required: true })} />
-                  {/* errors will return when field validation fails  */}
-                  {errors.exampleRequired && (
-                    <span>This field is required</span>
-                  )}
-
-                  <input type="submit" />
-                </form>
-              </div>
+            <form  className="" onSubmit={sendEmail}>
+            <div className="text-white flex justify-around items-center gap-3">
+              <input
+                placeholder="Your Name"
+                className="text-white bg-transparent border border-yellow-600 rounded-3xl p-3 w-full"
+                type="text"
+                name="from_name"
+              />
+              <input
+                placeholder="Your Email"
+                className="text-white w-full bg-transparent border-yellow-600 border rounded-3xl p-3"
+                type="email"
+                name="from_email"
+              />
+            </div>
+            <br />
+            <br />
+            <div className="flex justify-around items-center gap-3">
+              <input
+                placeholder="Your Name"
+                className="text-white bg-transparent border border-yellow-600 rounded-3xl p-3 w-full"
+                type="text"
+                name="from_name"
+              />
+              <input
+                placeholder="Your Email"
+                className="text-white w-full bg-transparent border-yellow-600 border rounded-3xl p-3"
+                type="email"
+                name="from_email"
+              />
+            </div>
+            <br />
+            <br />
+            <div className="flex justify-around items-center gap-3">
+              <input
+                placeholder="Date"
+                className="text-white bg-transparent border border-yellow-600 rounded-3xl p-3 w-full"
+                type="text"
+                name="from_date"
+              />
+              <input
+                placeholder="Time"
+                className="text-white w-full bg-transparent border-yellow-600 border rounded-3xl p-3"
+                type="email"
+                name="from_time"
+              />
+            </div>
+            <br />
+            <br />
+            <textarea
+              placeholder="Your Message"
+              className=" bg-transparent border-yellow-600 border rounded-3xl p-8 w-full text-white"
+              name="message"
+            />
+            <div className="text-center mt-3">
+              <input
+                className="btn rounded-3xl bg-transparent uppercase text-white border border-yellow-600"
+                type="submit"
+                value="send message"
+              />
+            </div>
+          </form>
             </div>
           </div>
         </div>
