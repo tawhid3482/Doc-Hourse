@@ -30,9 +30,9 @@ const Email = () => {
   return (
     <div>
       <div className="relative">
-        <img src={background} alt="" />
-        <div className="absolute lg:-mt-[550px] text-white p-10">
-          <div className="flex-col md:flex-row md:flex md:justify-between md:items-center gap-8">
+        <img src={background} className="h-[850px] md:h-[550px]" alt="" />
+        <div className="absolute -mt-[850px] md:-mt-[540px] lg:-mt-[550px] text-white p-10">
+          <div className="flex-col md:flex-row md:flex md:justify-between  gap-8">
             <div className=" md:w-1/3">
               <p className="text-4xl my-3 font-bold text-white">
                 Contact With Us
