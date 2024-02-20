@@ -16,7 +16,7 @@ import "swiper/css/navigation";
 
 const Feedback = () => {
   const [Feedback] = UseFeedBack();
-  console.log(Feedback);
+  // console.log(Feedback);
   return (
     <div className="my-10">
       <div className="">
