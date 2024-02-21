@@ -6,7 +6,7 @@ const Banner = () => {
     <div className=''>
      <div  className="relative ">
         <img src={logo} className='h-[480px] md:h-screen w-full' alt="" />
-       <div className="absolute -mt-[460px]  md:-mt-[400px] lg:-mt-[600px] p-5">
+       <div className="absolute -mt-[460px]  md:-mt-[400px] lg:-mt-[570px] p-5">
        <div className="flex-col md:flex-row md:flex md:justify-between md:items-center ">
         <div className=" ">
             <h1 className='text-base md:text-4xl lg:text-7xl font-bold text-white'>Your Best Medical Help Center</h1>
