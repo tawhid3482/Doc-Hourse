@@ -2,16 +2,29 @@ import { useForm,   } from "react-hook-form"
 import { FaGoogle } from 'react-icons/fa6';
 import back from '../assets/login/back.png'
 import login from '../assets/login/login.png'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import UseAuth from "../Hooks/UseAuth";
 
 const Login = () => {
+    const navigate = useNavigate();
+
+    const  {signInUser}= UseAuth()
   const {
       register,
       handleSubmit,
       formState: { errors },
     
     } = useForm()
-    const onSubmit = (data) => console.log(data)
+    const onSubmit = (data) => {
+        console.log(data)
+        signInUser(data.email,data.password)
+        .then((result)=>{
+            const user = result.user
+            console.log(user)
+            navigate('/')
+        })
+    
+    }
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">

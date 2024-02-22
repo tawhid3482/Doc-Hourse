@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import back from "../assets/login/back.png";
 import login from "../assets/login/login.png";
 import { FaGoogle } from "react-icons/fa6";
 import { useForm } from "react-hook-form";
 import UseAuth from "../Hooks/UseAuth";
 const SignUp = () => {
+    const navigate = useNavigate();
+
   const { createUser, updateUserProfile } = UseAuth();
   const {
     register,
@@ -18,6 +20,7 @@ const SignUp = () => {
         console.log(loggedUser)
         updateUserProfile(data.name,data.photo)
         .then(() =>{
+            navigate('/')
             // const userInfo = {
             //     namae: data.name,
             //     email: data.email,
