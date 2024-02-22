@@ -8,6 +8,7 @@ const Login = () => {
   const {
       register,
       handleSubmit,
+      formState: { errors },
     
     } = useForm()
     const onSubmit = (data) => console.log(data)
@@ -33,8 +34,11 @@ const Login = () => {
                   type="email"
                   placeholder="email"
                   className="input input-bordered"
-                  required
+                  
                 />
+                {errors.name && (
+                  <span className="text-red-500">Name field is required</span>
+                )}
               </div>
               <div className="form-control">
                 <label className="label">
@@ -45,8 +49,10 @@ const Login = () => {
                   type="password"
                   placeholder="password"
                   className="input input-bordered"
-                  required
                 />
+                {errors.name && (
+                  <span className="text-red-500">Name field is required</span>
+                )}
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover">
                     Forgot password?
