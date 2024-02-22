@@ -1,4 +1,5 @@
 // import { useForm, SubmitHandler } from "react-hook-form"
+import { FaGoogle } from 'react-icons/fa6';
 import back from '../assets/login/back.png'
 import login from '../assets/login/login.png'
 import { Link } from "react-router-dom";
@@ -23,6 +24,7 @@ const Login = () => {
           </div>
           <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form className="card-body">
+                <p className='text-2xl font-bold text-center'>Sign in to Doc House</p>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -51,13 +53,24 @@ const Login = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Login</button>
+                <button className="btn btn-warning">Sign In</button>
               </div>
             </form>
             <div className="text-center p-5">
                 <p>If you are a new Patients <br />
                 Please <Link to='/singUp'> <span className='text-yellow-500 '>Sing Up</span></Link>
                  </p>
+            </div>
+            <div className="divider divider-warning w-2/3 mx-auto">OR</div>
+
+            <div className="text-center my-3">
+                <div className=" flex justify-center items-center gap-4">
+                <button className='btn btn-warning'>
+                <FaGoogle className='text-3xl text-green-600'></FaGoogle>
+                <p className='text-xl font-bold text-white'>Google</p>
+
+                </button>
+                </div>
             </div>
             
           </div>
