@@ -2,7 +2,14 @@ import { Link } from 'react-router-dom';
 import back from '../assets/login/back.png'
 import login from '../assets/login/login.png'
 import { FaGoogle } from 'react-icons/fa6';
+import { useForm } from 'react-hook-form';
 const SignUp = () => {
+    const {
+        register,
+        handleSubmit,
+      
+      } = useForm()
+      const onSubmit = (data) => console.log(data)
     return (
         <div>
             <div className="hero min-h-screen bg-base-200">
@@ -15,14 +22,39 @@ const SignUp = () => {
             </div>
           </div>
           <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form className="card-body">
+            <form onSubmit={handleSubmit(onSubmit)} className="card-body">
             <p className='text-2xl font-bold text-center'>Sign Up to Doc House</p>
 
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Name</span>
+                </label>
+                <input
+                 {...register("Name")}
+                  type="text"
+                  placeholder="Your Name"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Photo URL</span>
+                </label>
+                <input
+                 {...register("photo")}
+                  type="text"
+                  placeholder="Your Photo "
+                  className="input input-bordered"
+                  required
+                />
+              </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
                 </label>
                 <input
+                 {...register("email")}
                   type="email"
                   placeholder="email"
                   className="input input-bordered"
@@ -35,6 +67,7 @@ const SignUp = () => {
                 </label>
                 <input
                   type="password"
+                  {...register("password")}
                   placeholder="password"
                   className="input input-bordered"
                   required
