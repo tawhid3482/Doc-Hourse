@@ -4,12 +4,16 @@ import login from '../assets/login/login.png'
 import { FaGoogle } from 'react-icons/fa6';
 import { useForm } from 'react-hook-form';
 const SignUp = () => {
+    const {createUser}=
     const {
         register,
         handleSubmit,
-      
+        formState: { errors },
       } = useForm()
-      const onSubmit = (data) => console.log(data)
+      const onSubmit = (data) => {
+        console.log(data)
+
+      }
     return (
         <div>
             <div className="hero min-h-screen bg-base-200">
@@ -30,7 +34,7 @@ const SignUp = () => {
                   <span className="label-text">Name</span>
                 </label>
                 <input
-                 {...register("Name")}
+                 {...register("Name",{ required: true })}
                   type="text"
                   placeholder="Your Name"
                   className="input input-bordered"
@@ -42,7 +46,7 @@ const SignUp = () => {
                   <span className="label-text">Photo URL</span>
                 </label>
                 <input
-                 {...register("photo")}
+                 {...register("photo",{ required: true })}
                   type="text"
                   placeholder="Your Photo "
                   className="input input-bordered"
@@ -54,7 +58,7 @@ const SignUp = () => {
                   <span className="label-text">Email</span>
                 </label>
                 <input
-                 {...register("email")}
+                 {...register("email",{ required: true })}
                   type="email"
                   placeholder="email"
                   className="input input-bordered"
@@ -67,16 +71,12 @@ const SignUp = () => {
                 </label>
                 <input
                   type="password"
-                  {...register("password")}
+                  {...register("password",{ required: true })}
                   placeholder="password"
                   className="input input-bordered"
                   required
                 />
-                <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
-                    Forgot password?
-                  </a>
-                </label>
+              
               </div>
               <div className="form-control mt-6">
               <button className="btn btn-warning">Sign Up</button>
