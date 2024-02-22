@@ -1,6 +1,8 @@
 // import { useForm, SubmitHandler } from "react-hook-form"
 import back from '../assets/login/back.png'
 import login from '../assets/login/login.png'
+import { Link } from "react-router-dom";
+
 const Login = () => {
   // const {
   //     register,
@@ -52,6 +54,12 @@ const Login = () => {
                 <button className="btn btn-primary">Login</button>
               </div>
             </form>
+            <div className="text-center p-5">
+                <p>If you are a new Patients <br />
+                Please <Link to='/singUp'> <span className='text-yellow-500 '>Sing Up</span></Link>
+                 </p>
+            </div>
+            
           </div>
         </div>
       </div>
