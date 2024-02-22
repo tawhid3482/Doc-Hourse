@@ -5,7 +5,7 @@ import { FaGoogle } from "react-icons/fa6";
 import { useForm } from "react-hook-form";
 import UseAuth from "../Hooks/UseAuth";
 const SignUp = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const { createUser, updateUserProfile } = UseAuth();
   const {
@@ -16,17 +16,16 @@ const SignUp = () => {
   const onSubmit = (data) => {
     console.log(data);
     createUser(data.email, data.password).then((result) => {
-        const loggedUser = result.user;
-        console.log(loggedUser)
-        updateUserProfile(data.name,data.photo)
-        .then(() =>{
-            navigate('/')
-            // const userInfo = {
-            //     namae: data.name,
-            //     email: data.email,
-            //     photo: data.photo,
-            //   };
-        })
+      const loggedUser = result.user;
+      console.log(loggedUser);
+      updateUserProfile(data.name, data.photo).then(() => {
+        navigate("/");
+        // const userInfo = {
+        //     namae: data.name,
+        //     email: data.email,
+        //     photo: data.photo,
+        //   }
+      });
     });
   };
   return (
@@ -54,9 +53,8 @@ const SignUp = () => {
                   type="text"
                   placeholder="Your Name"
                   className="input input-bordered"
-                  
                 />
-                 {errors.name && (
+                {errors.name && (
                   <span className="text-red-500">Name field is required</span>
                 )}
               </div>
@@ -86,7 +84,6 @@ const SignUp = () => {
                   type="email"
                   placeholder="email"
                   className="input input-bordered"
-                  
                 />
                 {errors.email && (
                   <span className="text-red-500">Email field is required</span>
@@ -101,7 +98,6 @@ const SignUp = () => {
                   {...register("password", { required: true })}
                   placeholder="password"
                   className="input input-bordered"
-                  
                 />
                 {errors.password?.type === "required" && (
                   <span className="text-red-600"> Password is required</span>
