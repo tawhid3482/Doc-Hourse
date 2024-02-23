@@ -4,6 +4,7 @@ import login from "../assets/login/login.png";
 import { FaGoogle } from "react-icons/fa6";
 import { useForm } from "react-hook-form";
 import UseAuth from "../Hooks/UseAuth";
+import { reload } from "firebase/auth";
 const SignUp = () => {
   const navigate = useNavigate();
 
@@ -12,6 +13,7 @@ const SignUp = () => {
   const {
     register,
     handleSubmit,
+    
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
@@ -21,7 +23,11 @@ const SignUp = () => {
       console.log(loggedUser);
       updateUserProfile(data.name, data.photo).then(() => {
         navigate("/");
-        console.log(data)
+        setTimeout(() => {
+          window.location.reload();  
+      }, 2*1000);
+        // console.log(data)
+      
         // const userInfo = {
         //     namae: data.name,
         //     email: data.email,
