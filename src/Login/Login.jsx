@@ -14,7 +14,7 @@ const Login = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
     signInUser(data.email, data.password).then((result) => {
       const user = result.user;
       console.log(user);
@@ -41,13 +41,13 @@ const Login = () => {
                   <span className="label-text">Email</span>
                 </label>
                 <input
-                  {...register("email")}
+                  {...register("email",{required:true})}
                   type="email"
                   placeholder="email"
                   className="input input-bordered"
                 />
-                {errors.name && (
-                  <span className="text-red-500">Name field is required</span>
+                {errors.email && (
+                  <span className="text-red-500">Email field is required</span>
                 )}
               </div>
               <div className="form-control">
@@ -55,13 +55,13 @@ const Login = () => {
                   <span className="label-text">Password</span>
                 </label>
                 <input
-                  {...register("password")}
+                  {...register("password",{required:true})}
                   type="password"
                   placeholder="password"
                   className="input input-bordered"
                 />
-                {errors.name && (
-                  <span className="text-red-500">Name field is required</span>
+                {errors.password && (
+                  <span className="text-red-500">password field is required</span>
                 )}
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover">

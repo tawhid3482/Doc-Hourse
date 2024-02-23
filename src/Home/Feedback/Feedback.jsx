@@ -29,7 +29,7 @@ const Feedback = () => {
         </p>
       </div>
       <div className="">
-        <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+        <Swiper key={Feedback?.id} navigation={true} modules={[Navigation]} className="mySwiper">
           {Feedback?.map((review) => (
             <SwiperSlide key={review?._id}>
              <div className="p-10">
