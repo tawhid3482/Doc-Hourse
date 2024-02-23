@@ -8,13 +8,14 @@ const SignUp = () => {
   const navigate = useNavigate();
 
   const { createUser, updateUserProfile } = UseAuth();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
     createUser(data.email, data.password).then((result) => {
       const loggedUser = result.user;
       console.log(loggedUser);
@@ -49,7 +50,7 @@ const SignUp = () => {
                   <span className="label-text">Name</span>
                 </label>
                 <input
-                  {...register("Name", { required: true })}
+                  {...register("name", { required: true })}
                   type="text"
                   placeholder="Your Name"
                   className="input input-bordered"
@@ -67,7 +68,7 @@ const SignUp = () => {
                   type="text"
                   placeholder="Your Photo "
                   className="input input-bordered"
-                  required
+                  
                 />
                 {errors.photo && (
                   <span className="text-red-500">
