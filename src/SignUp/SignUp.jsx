@@ -4,7 +4,6 @@ import login from "../assets/login/login.png";
 import { FaGoogle } from "react-icons/fa6";
 import { useForm } from "react-hook-form";
 import UseAuth from "../Hooks/UseAuth";
-import { reload } from "firebase/auth";
 const SignUp = () => {
   const navigate = useNavigate();
 

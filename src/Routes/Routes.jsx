@@ -8,6 +8,7 @@ const Routes = createBrowserRouter([
   {
     path: "/",
     element: <MainlayOut></MainlayOut>,
+    errorElement:
     children: [
       {
         path: "/",
