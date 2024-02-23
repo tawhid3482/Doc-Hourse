@@ -7,7 +7,7 @@ import UseAuth from "../Hooks/UseAuth";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { signInUser } = UseAuth();
+  const { signInUser } = UseAuth()
   const {
     register,
     handleSubmit,
