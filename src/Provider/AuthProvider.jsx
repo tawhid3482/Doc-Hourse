@@ -1,3 +1,5 @@
+import { createContext, useEffect, useState } from "react";
+import { Auth } from "../Firebase/Firebase.config";
 import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
@@ -7,14 +9,16 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
-import { createContext, useEffect, useState } from "react";
-import { Auth } from "../Firebase/Firebase.config";
+
 export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
-  const [user, setuser] = useState(null);
+
+  const axiosPublic = (true)
+  const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const googleProvider = new GoogleAuthProvider();
-  const createUser = (email, password) => {
+
+ const createUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(Auth, email, password);
   };
@@ -38,30 +42,30 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return signInWithPopup(Auth, googleProvider);
   };
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(Auth, (currentUser) => {
-      setuser(currentUser);
-      console.log(currentUser);
-      //   if (currentUser) {
-      //     const userInfo = { email: currentUser.email };
-      //     axiosPublic.post("/jwt", userInfo).then((res) => {
-      //       if (res.data.token) {
-      //         localStorage.setItem("access-token", res.data.token);
-      //         setLoading(false);
-      //       }
-      //     });
-      //   } else {
-      //     localStorage.removeItem("access-token");
-      //     setLoading(false);
+      setUser(currentUser);
+      // if (currentUser) {
+      //   const userInfo = { email: currentUser.email };
+      //   axiosPublic.post("/jwt", userInfo).then((res) => {
+      //     if (res.data.token) {
+      //       localStorage.setItem("access-token", res.data.token);
+      //       setLoading(false);
+      //     }
+      //   });
+      // } else {
+      //   localStorage.removeItem("access-token");
+      //   setLoading(false);
 
-      //   }
+      // }
     });
     return () => {
       return unsubscribe();
     };
-  }, []);
+  }, [axiosPublic]);
 
-  const authInfo = {
+  const AuthInfo = {
     user,
     loading,
     createUser,
@@ -71,7 +75,7 @@ const AuthProvider = ({ children }) => {
     googleLogin,
   };
   return (
-    <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={AuthInfo}>{children}</AuthContext.Provider>
   );
 };
 export default AuthProvider;
