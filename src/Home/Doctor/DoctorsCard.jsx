@@ -1,6 +1,7 @@
 import { CiLocationOn } from "react-icons/ci";
 import { FaRegCalendar } from "react-icons/fa6";
 import { RiMoneyDollarCircleLine } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 
 
@@ -35,8 +36,10 @@ const DoctorsCard = ({ doctor }) => {
             <p>{doctor?.fee}</p>
           </div>
           <div className="my-2">
+            <Link> 
             <button className="btn btn-outline w-full btn-warning
             ">View Profile</button>
+            </Link>
           </div>
         </div>
       </div>
