@@ -9,7 +9,12 @@
         "img":"https://i.postimg.cc/RF9QhLFk/doc2.png",
         "rating":"5.00",
         "specialist":"Dental Filling",
-        "specialist2":"Teeth Whitening"
+        "specialist2":"Teeth Whitening",
+        "about":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "education":"American Dental Medical University, BDS, 1998-2003,  American Dental Medical University,MDS,2003 - 2005",
+        "services":"nai",
+        "specializations":"nai",
+        "awards":"nai"
         
 
     },
