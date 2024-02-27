@@ -21,9 +21,25 @@ const DocDetailsShow = ({ doc }) => {
         <p className="text-2xl font-bold">About Me</p>
         <p> {doc?.about}</p>
       </div>
+      <div className="flex justify-between items-center">
       <div className="my-5">
         <p className="text-2xl font-bold">Education</p>
         <p> {doc?.education}</p>
+      </div>
+      <div className="my-5">
+        <p className="text-2xl font-bold">Awards</p>
+        <p> {doc?.awards}</p>
+      </div>
+      </div>
+      <div className="flex justify-between items-center">
+      <div className="my-5">
+        <p className="text-2xl font-bold">Services</p>
+        <p> {doc?.services}</p>
+      </div>
+      <div className="my-5">
+        <p className="text-2xl font-bold">Specializations</p>
+        <p> {doc?.specializations}</p>
+      </div>
       </div>
     </div>
   );
