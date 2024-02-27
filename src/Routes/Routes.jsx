@@ -5,12 +5,13 @@ import Login from "../Login/Login";
 import SignUp from "../SignUp/SignUp";
 import ErrorPage from "../Error/ErrorPage";
 import DocDetails from "../Home/Doctor/DocDetails";
+import PrivateProvider from "./PrivateProvider";
 
 const Routes = createBrowserRouter([
   {
     path: "/",
     element: <MainlayOut></MainlayOut>,
-    errorElement:<ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -18,17 +19,20 @@ const Routes = createBrowserRouter([
       },
       {
         path: "/login",
-        element: <Login></Login>
+        element: <Login></Login>,
       },
       {
-        path:'/singUp',
-        element:<SignUp></SignUp>
+        path: "/singUp",
+        element: <SignUp></SignUp>,
       },
       {
-        path:'/docDetails/:id',
-        element:<DocDetails></DocDetails>,
-        
-      }
+        path: "/docDetails/:id",
+        element: (
+          <PrivateProvider>
+            <DocDetails></DocDetails>
+          </PrivateProvider>
+        ),
+      },
     ],
   },
 ]);

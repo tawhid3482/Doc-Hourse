@@ -4,8 +4,12 @@ import UseAuth from "../Hooks/UseAuth";
 const PrivateProvider = ({ children }) => {
   const { user, loading } = UseAuth();
   const location = useLocation();
-  if (loading) {
-    return <progress className="progress w-56"></progress>;
+  if (!loading) {
+    return (
+      <div className="text-center my-10">
+        <progress className="progress w-56"></progress>
+      </div>
+    );
   }
   if (user) {
     return children;

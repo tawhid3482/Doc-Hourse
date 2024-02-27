@@ -28,8 +28,8 @@ const Feedback = () => {
           sunt explicabo.
         </p>
       </div>
-      <div className="">
-        <Swiper key={Feedback?.id} navigation={true} modules={[Navigation]} className="mySwiper">
+      <div  className="">
+        <Swiper  navigation={true} modules={[Navigation]} className="mySwiper">
           {Feedback?.map((review) => (
             <SwiperSlide key={review?._id}>
              <div className="p-10">

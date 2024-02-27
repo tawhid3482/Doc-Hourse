@@ -3,8 +3,6 @@ import logo from "../../assets/images/Screenshot_2024-02-17_192626-removebg-prev
 import UseAuth from "../../Hooks/UseAuth";
 const Navber = () => {
   const { user, logoutUser } = UseAuth();
-
-  console.log(user?.displayName)
   const navOptions = (
     <>
       <li>

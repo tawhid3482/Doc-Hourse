@@ -4,7 +4,6 @@ import DoctorsCard from "./DoctorsCard";
 
 const Doctor = () => {
   const [doc] = UseDoc();
-  console.log(doc)
   return (
     <div>
       <div className="">
