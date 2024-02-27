@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 
 const DoctorsCard = ({ doctor }) => {
+  const {id}=doctor
 //   console.log(doctor);
   return (
     <div>
@@ -36,7 +37,7 @@ const DoctorsCard = ({ doctor }) => {
             <p>{doctor?.fee}</p>
           </div>
           <div className="my-2">
-            <Link> 
+            <Link to={`/docDetails/${id}`}> 
             <button className="btn btn-outline w-full btn-warning
             ">View Profile</button>
             </Link>

@@ -1,6 +1,6 @@
 
 const DocDetailsShow = ({doc}) => {
-    console.log(doc)
+    // console.log(doc)
     return (
         <div>
             
