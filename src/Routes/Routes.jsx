@@ -6,6 +6,7 @@ import SignUp from "../SignUp/SignUp";
 import ErrorPage from "../Error/ErrorPage";
 import DocDetails from "../Home/Doctor/DocDetails";
 import PrivateProvider from "./PrivateProvider";
+import Contact from "../Contact/Contact";
 
 const Routes = createBrowserRouter([
   {
@@ -32,7 +33,10 @@ const Routes = createBrowserRouter([
             <DocDetails></DocDetails>
           </PrivateProvider>
         ),
-      },
+      },{
+        path:'/contact',
+        element:<Contact></Contact>
+      }
     ],
   },
 ]);
