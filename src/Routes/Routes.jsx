@@ -7,6 +7,7 @@ import ErrorPage from "../Error/ErrorPage";
 import DocDetails from "../Home/Doctor/DocDetails";
 import PrivateProvider from "./PrivateProvider";
 import Contact from "../Contact/Contact";
+import Appointment from "../Appointment/Appointment";
 
 const Routes = createBrowserRouter([
   {
@@ -39,7 +40,7 @@ const Routes = createBrowserRouter([
       },
       {
         path:'/appointment',
-        element:
+        element:<Appointment></Appointment>
       }
     ],
   },
