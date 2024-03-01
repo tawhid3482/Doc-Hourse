@@ -1,15 +1,23 @@
-import { useState } from 'react';
-import Calendar from 'react-calendar';
+import { useState } from "react";
+import Calendar from "react-calendar";
+import 'react-calendar/dist/Calendar.css';
 
-type ValuePiece = Date | null;
+const ValuePiece = Date | null;
 
-type Value = ValuePiece | [ValuePiece, ValuePiece];
+const Value = ValuePiece ;
 const Calender = () => {
-    return (
-        <div>
-            
+  const [value, onChange] = useState < Value > new Date();
+
+  return (
+    <div>
+      <div className="">
+        <div className="">
+          <Calendar onChange={onChange} value={value} />
         </div>
-    );
+        <div className=""></div>
+      </div>
+    </div>
+  );
 };
 
 export default Calender;
