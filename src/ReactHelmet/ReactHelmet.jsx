@@ -1,14 +1,13 @@
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from "react-helmet-async";
 
-const ReactHelmet = ({title}) => {
-    return (
-        <div>
-            <Helmet> 
-                
-            </Helmet>
-            <title>{title}</title>
-        </div>
-    );
+const ReactHelmet = ({ title }) => {
+  return (
+    <div>
+      <Helmet>
+        <title>{title}</title>
+      </Helmet>
+    </div>
+  );
 };
 
 export default ReactHelmet;
