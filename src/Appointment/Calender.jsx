@@ -6,12 +6,12 @@ const Calender = () => {
   const [value, onChange] = useState(new Date()) ;
 
   return (
-    <div className="p-10 my-10">
-      <div className="flex justify-between items-center">
+    <div className=" p-5 md:p-10 my-10">
+      <div className=" flex-col lg:flex-row gap-16 md:flex md:justify-center items-center">
         <div className="">
           <Calendar onChange={onChange} value={value} />
         </div>
-        <div className="">
+        <div className="my-5 lg:my-0">
           <img src={chair} className="" alt="" />
         </div>
       </div>
