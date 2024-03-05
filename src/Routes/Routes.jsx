@@ -8,6 +8,7 @@ import DocDetails from "../Home/Doctor/DocDetails";
 import PrivateProvider from "./PrivateProvider";
 import Contact from "../Contact/Contact";
 import Appointment from "../Appointment/Appointment";
+import ServiceProducts from "../Appointment/ServiceProducts";
 
 const Routes = createBrowserRouter([
   {
@@ -41,6 +42,11 @@ const Routes = createBrowserRouter([
       {
         path:'/appointment',
         element:<Appointment></Appointment>
+      },
+      {
+        path:'/services/:name',
+        element:<ServiceProducts></ServiceProducts>,
+        
       }
     ],
   },
