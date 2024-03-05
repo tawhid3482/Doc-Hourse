@@ -12,5 +12,19 @@
         "name":"Baby fiver",
         "img":"https://www.shutterstock.com/image-photo/teeth-braces-260nw-124314160.jpg",
         "time":"8:00 AM - 9:00 AM"
+    },
+    {
+        "id":"03",
+        "service":"Baby Care",
+        "name":"Baby delivery",
+        "img":"https://st.depositphotos.com/1966515/1904/i/450/depositphotos_19044561-stock-photo-newborn-baby-being-examined.jpg",
+        "time":"8:00 AM - 9:00 AM"
+    },
+    {
+        "id":"04",
+        "service":"Skin Care",
+        "name":"skin pimple",
+        "img":"https://images.pexels.com/photos/6475987/pexels-photo-6475987.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        "time":"8:00 AM - 9:00 AM"
     }
 ]
