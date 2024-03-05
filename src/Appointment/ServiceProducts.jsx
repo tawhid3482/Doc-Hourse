@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import SPCard from "./SPCard";
 
 const ServiceProducts = () => {
   const data = useLoaderData();
@@ -9,11 +10,15 @@ const ServiceProducts = () => {
         {data.length === 0 ? (
           <div className="">
             <h1 className="text-4xl font-bold text-center flex justify-center items-center">
-              There are no products in this brand
+              There are no services in this sector
             </h1>
           </div>
         ) : (
-          <div className=""></div>
+          <div className="">
+            {
+                data?.map((service)=><SPCard key={service.id} service={service}></SPCard>)
+            }
+          </div>
         )}
       </div>
     </div>
