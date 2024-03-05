@@ -1,5 +1,6 @@
 import doc from "../../assets/services/doc.png";
 import dat from "../../assets/services/dat.png";
+import { Link } from "react-router-dom";
 const Service = () => {
   return (
     <div>
@@ -7,7 +8,7 @@ const Service = () => {
         <div className="md:w-1/2">
           <img src={doc} className="" alt="" />
         </div>
-        <div className="md:w-1/2  p-3" >
+        <div className="md:w-1/2  p-3">
           <div className="">
             <p className="text-5xl font-bold">Our Services</p>
             <h1 className="my-2 text-lg">
@@ -32,7 +33,9 @@ const Service = () => {
             <img src={dat} className="" alt="" />
           </div>
           <div className="">
-            <h1 className="text-3xl font-bold my-8">Electro Gastrology Therapy</h1>
+            <h1 className="text-3xl font-bold my-8">
+              Electro Gastrology Therapy
+            </h1>
             <p className="text-lg">
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
               accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
@@ -45,7 +48,11 @@ const Service = () => {
               aperiam, eaque ipsa quae ab illo inve ntore veritatis et quasi
               architecto beatae vitae dicta sunt explicabo.{" "}
             </p>
-            <button className="btn btn-outline btn-warning">More Details</button>
+            <Link to="/appointment">
+              <button className="btn btn-outline btn-warning">
+                More Details
+              </button>
+            </Link>
           </div>
         </div>
       </div>
