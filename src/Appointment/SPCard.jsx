@@ -2,9 +2,11 @@ import { useState } from "react";
 // import ReactDOM from 'react-dom';
 import Modal from "react-modal";
 import { RxCross2 } from "react-icons/rx";
+import UseAuth from "../Hooks/UseAuth";
 
 const SPCard = ({ service }) => {
   // console.log(service);
+  const {user}=UseAuth()
 
   const customStyles = {
     content: {
@@ -14,7 +16,7 @@ const SPCard = ({ service }) => {
       bottom: "auto",
       marginRight: "-50%",
       transform: "translate(-50%, -50%)",
-      backgroundColor: '#B3D5A4'
+      backgroundColor: "#B3D5A4",
     },
   };
 
@@ -32,6 +34,13 @@ const SPCard = ({ service }) => {
 
   function closeModal() {
     setIsOpen(false);
+  }
+
+  const currentDate = new Date().toISOString().split("T")[0];
+
+  const handlSubmit = ()=>{
+
+    
   }
 
   return (
@@ -57,60 +66,72 @@ const SPCard = ({ service }) => {
               onRequestClose={closeModal}
               style={customStyles}
               contentLabel="Example Modal"
-              
-            > 
+            >
               <div className=" w-[420px] rounded-2xl ">
-              <div className="flex justify-between items-center">
-                <h2
-                  className="text-2xl font-bold text-green-600"
-                  ref={(_subtitle) => (subtitle = _subtitle)}
-                >
-                  {service.name}
-                </h2>
-                <button
-                  className="btn btn-sm rounded-full btn-success text-white uppercase"
-                  onClick={closeModal}
-                >
-                  <RxCross2 className="text-xl "></RxCross2>
-                </button>
-              </div>
-              <form className="card-body">
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text">Email</span>
-                  </label>
-                  <input
-                    type="email"
-                    placeholder="email"
-                    className="input input-bordered"
-                    required
-                  />
+                <div className="flex justify-between items-center">
+                  <h2
+                    className="text-2xl font-bold text-green-600"
+                    ref={(_subtitle) => (subtitle = _subtitle)}
+                  >
+                    {service.name}
+                  </h2>
+                  <button
+                    className="btn btn-sm rounded-full btn-success text-white uppercase"
+                    onClick={closeModal}
+                  >
+                    <RxCross2 className="text-xl "></RxCross2>
+                  </button>
                 </div>
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text">Password</span>
-                  </label>
-                  <input
-                    type="password"
-                    placeholder="password"
-                    className="input input-bordered"
-                    required
-                  />
-                  <label className="label">
-                    <a href="#" className="label-text-alt link link-hover">
-                      Forgot password?
-                    </a>
-                  </label>
-                </div>
-                <div className="form-control mt-6">
-                  <button className="btn btn-primary">Login</button>
-                </div>
-              </form>
+                <form className="card-body">
+                  <div className="form-control">
+                    <input
+                      type="text"
+                      placeholder="date"
+                      defaultValue={currentDate}
+                      className="input input-bordered"
+                      required
+                    />
+                  </div>
+                  <div className="form-control">
+                    <input
+                      type="text"
+                      placeholder="Time"
+                      defaultValue={service.time}
+                      className="input input-bordered"
+                      required
+                    />
+                  </div>
+                  <div className="form-control">
+                    <input
+                      type="text"
+                      placeholder="Full Name"
+                      className="input input-bordered"
+                      required
+                    />
+                  </div>
+                  <div className="form-control">
+                    <input
+                      type="text"
+                      placeholder="Phone Number"
+                      className="input input-bordered"
+                      required
+                    />
+                  </div>
+                  <div className="form-control">
+                    <input
+                      type="text"
+                      placeholder="Email"
+                      defaultValue={user?.email}
+                      className="input input-bordered"
+                      required
+                    />
+                  </div>
+                  <div className="form-control mt-4">
+                    <button onClick={handlSubmit} className="btn btn-error btn-outline ">Submit</button>
+                  </div>
+                </form>
               </div>
             </Modal>
-            {/* <button onClick={handleClick} className="btn btn-error btn-outline">
-                Book Appointment
-            </button> */}
           </div>
         </div>
       </div>
