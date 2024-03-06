@@ -17,7 +17,9 @@
     "react-dom": "^18.2.0",
     "react-helmet-async": "^2.0.4",
     "react-hook-form": "^7.50.1",
+    "react-modal": "^3.16.1",
     "react-rating": "^2.0.5",
+    "sweetalert2": "^11.10.6",
     "swiper": "^11.0.6"
   },
   "devDependencies": {
