@@ -16,7 +16,9 @@ const SPCard = ({ service }) => {
           <h2 className="card-title">{service.name}</h2>
           <p>{service.time}</p>
           <div className="card-actions">
-            <button className="btn btn-error btn-outline">Book Appointment</button>
+            <button className="btn btn-error btn-outline">
+                Book Appointment
+            </button>
           </div>
         </div>
       </div>

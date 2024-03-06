@@ -5,7 +5,7 @@ const UseFeedBack = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(()=>{
-        fetch('/feedback.json')
+        fetch('http://localhost:5000/feedback')
         .then(res =>res.json())
         .then(data => {
             setfeedback(data)

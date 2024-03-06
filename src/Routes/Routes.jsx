@@ -46,7 +46,7 @@ const Routes = createBrowserRouter([
       {
         path:'/services/:name',
         element:<ServiceProducts></ServiceProducts>,
-        loader:({params})=>fetch(`saikat/${params.name}`)
+        loader:({params})=>fetch(`http://localhost:5000/srProducts/${params.name}`)
       }
     ],
   },
