@@ -1,10 +1,10 @@
 const SPCard = ({ service }) => {
-  console.log(service);
+  // console.log(service);
 
 
   return (
     <div>
-      <div className="card w-96  bg-base-100 shadow-xl">
+      <div className="card w-full md:w-80 lg:w-96  bg-base-100 shadow-xl">
         <figure className="px-10 pt-10">
           <img
             src={service.img}
