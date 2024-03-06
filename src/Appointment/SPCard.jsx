@@ -4,12 +4,12 @@ const SPCard = ({ service }) => {
 
   return (
     <div>
-      <div className="card w-96 bg-base-100 shadow-xl">
+      <div className="card w-96  bg-base-100 shadow-xl">
         <figure className="px-10 pt-10">
           <img
             src={service.img}
             alt={service.name}
-            className="rounded-xl"
+            className="rounded-xl w-72 h-40"
           />
         </figure>
         <div className="card-body items-center text-center">
