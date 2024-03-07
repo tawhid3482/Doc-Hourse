@@ -3,9 +3,12 @@ import { useState } from "react";
 import Modal from "react-modal";
 import { RxCross2 } from "react-icons/rx";
 import UseAuth from "../Hooks/UseAuth";
+import UseAxiosPublic from "../Axios/UseAxiosPublic";
+import Swal from "sweetalert2";
 
 const SPCard = ({ service }) => {
   // console.log(service);
+  const AxiosPublic = UseAxiosPublic()
   const { user } = UseAuth();
 
   const customStyles = {
@@ -38,7 +41,7 @@ const SPCard = ({ service }) => {
 
   const currentDate = new Date().toISOString().split("T")[0];
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
     const serviceName = form.serviceName
@@ -49,7 +52,26 @@ const SPCard = ({ service }) => {
     const phone = form.phone.value;
     const email = form.email.value;
     console.log(date, time, name, phone, email,serviceName);
-    
+    const appItem = {
+      serviceName,
+      date,
+      time,
+      name,
+      phone,
+      email
+    }
+    console.log(appItem)
+    const appointment = await AxiosPublic.post('/appointment',appItem)
+    if(appointment.data.insertedId){
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Your work has been saved",
+        showConfirmButton: false,
+        timer: 1500
+      });
+    }
+
   };
   
 
