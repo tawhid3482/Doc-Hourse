@@ -11,9 +11,7 @@ const Email = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    // const templateParams = {
-    //   to_name : "Tawhidul Islam"
-    // }
+  
     emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
       (result) => {
         console.log(result.text);
