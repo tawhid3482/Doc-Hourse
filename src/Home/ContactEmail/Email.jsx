@@ -11,6 +11,9 @@ const Email = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    // const templateParams = {
+    //   to_name : "Tawhidul Islam"
+    // }
     emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
       (result) => {
         console.log(result.text);
@@ -90,13 +93,13 @@ const Email = () => {
                   <input
                     placeholder="Date"
                     className="text-white bg-transparent border border-yellow-600 rounded-3xl p-3 w-full"
-                    type="text"
+                    type="date"
                     name="from_date"
                   />
                   <input
                     placeholder="Time"
                     className="text-white w-full bg-transparent border-yellow-600 border rounded-3xl p-3"
-                    type="text"
+                    type="time"
                     name="from_time"
                   />
                 </div>
