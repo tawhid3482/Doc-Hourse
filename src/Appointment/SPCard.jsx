@@ -6,7 +6,7 @@ import UseAuth from "../Hooks/UseAuth";
 
 const SPCard = ({ service }) => {
   // console.log(service);
-  const {user}=UseAuth()
+  const { user } = UseAuth();
 
   const customStyles = {
     content: {
@@ -38,10 +38,20 @@ const SPCard = ({ service }) => {
 
   const currentDate = new Date().toISOString().split("T")[0];
 
-  const handlSubmit = ()=>{
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const serviceName = form.serviceName
+    .value;
+    const date = form.date.value;
+    const time = form.time.value;
+    const name = form.name.value;
+    const phone = form.phone.value;
+    const email = form.email.value;
+    console.log(date, time, name, phone, email,serviceName);
     
-  }
+  };
+  
 
   return (
     <div>
@@ -54,7 +64,7 @@ const SPCard = ({ service }) => {
           />
         </figure>
         <div className="card-body items-center text-center">
-          <h2 className="card-title">{service.name}</h2>
+          <h2 className="card-title" >{service.name}</h2>
           <p>{service.time}</p>
           <div className="card-actions">
             <button className="btn btn-error btn-outline" onClick={openModal}>
@@ -82,10 +92,22 @@ const SPCard = ({ service }) => {
                     <RxCross2 className="text-xl "></RxCross2>
                   </button>
                 </div>
-                <form className="card-body">
+                <form onSubmit={handleSubmit} className="card-body">
+                
                   <div className="form-control">
                     <input
                       type="text"
+                      name="serviceName"
+                      placeholder="date"
+                      defaultValue={service.name}
+                      className="input input-bordered"
+                      required
+                    />
+                  </div>
+                  <div className="form-control">
+                    <input
+                      type="text"
+                      name="date"
                       placeholder="date"
                       defaultValue={currentDate}
                       className="input input-bordered"
@@ -95,6 +117,7 @@ const SPCard = ({ service }) => {
                   <div className="form-control">
                     <input
                       type="text"
+                      name="time"
                       placeholder="Time"
                       defaultValue={service.time}
                       className="input input-bordered"
@@ -104,6 +127,7 @@ const SPCard = ({ service }) => {
                   <div className="form-control">
                     <input
                       type="text"
+                      name="name"
                       placeholder="Full Name"
                       className="input input-bordered"
                       required
@@ -112,6 +136,7 @@ const SPCard = ({ service }) => {
                   <div className="form-control">
                     <input
                       type="text"
+                      name="phone"
                       placeholder="Phone Number"
                       className="input input-bordered"
                       required
@@ -120,6 +145,7 @@ const SPCard = ({ service }) => {
                   <div className="form-control">
                     <input
                       type="text"
+                      name="email"
                       placeholder="Email"
                       defaultValue={user?.email}
                       className="input input-bordered"
@@ -127,7 +153,11 @@ const SPCard = ({ service }) => {
                     />
                   </div>
                   <div className="form-control mt-4">
-                    <button onClick={handlSubmit} className="btn btn-error btn-outline ">Submit</button>
+                    <input
+                      type="submit"
+                      className="btn btn-error text-white uppercase"
+                      value="Submit"
+                    />
                   </div>
                 </form>
               </div>
