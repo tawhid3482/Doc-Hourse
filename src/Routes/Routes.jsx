@@ -9,6 +9,7 @@ import PrivateProvider from "./PrivateProvider";
 import Contact from "../Contact/Contact";
 import Appointment from "../Appointment/Appointment";
 import ServiceProducts from "../Appointment/ServiceProducts";
+import Dashboard from "../Dashboard/Dashboard";
 
 const Routes = createBrowserRouter([
   {
@@ -35,20 +36,36 @@ const Routes = createBrowserRouter([
             <DocDetails></DocDetails>
           </PrivateProvider>
         ),
-      },{
-        path:'/contact',
-        element:<Contact></Contact>
       },
       {
-        path:'/appointment',
-        element:<Appointment></Appointment>
+        path: "/contact",
+        element: <Contact></Contact>,
       },
       {
-        path:'/services/:name',
-        element:<ServiceProducts></ServiceProducts>,
-        loader:({params})=>fetch(`http://localhost:5000/srProducts/${params.name}`)
-      }
+        path: "/appointment",
+        element: <Appointment></Appointment>,
+      },
+      {
+        path: "/services/:name",
+        element: (
+          <PrivateProvider>
+            <ServiceProducts></ServiceProducts>
+          </PrivateProvider>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/srProducts/${params.name}`),
+      },
     ],
+  },
+  {
+    path:'/dashboard',
+    element:<Dashboard></Dashboard>,
+    errorElement:<ErrorPage></ErrorPage>,
+    children:[
+      {
+        
+      }
+    ]
   },
 ]);
 
