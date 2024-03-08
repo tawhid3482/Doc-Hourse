@@ -1,9 +1,9 @@
-import { FaBook, FaHouseMedical, FaUsers } from "react-icons/fa6";
+import {  } from "react-icons/fa6";
 import { NavLink, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
     const isAdmin = false
-  const isModerator = false;
+  const isModerator = true;
     return (
         <div>
             <div className="w-full h-16 bg-green-800 flex items-center text-white p-5">
@@ -17,23 +17,34 @@ const Dashboard = () => {
               <>
                 <li className=" mb-2 uppercase">
                   <NavLink to="/dashboard/AdminHome">
-                    <FaHouseMedical className="text-xl mr-2"></FaHouseMedical> Admin Home
+                    Admin Home
                   </NavLink>
                 </li>
                 <li className=" mb-2 uppercase">
-                  <NavLink to="/dashboard/addCourse">
-                    <FaBook className="text-xl mr-2"></FaBook> Add course
+                  <NavLink to="/dashboard/addService">
+                   Add Service
                   </NavLink>
                 </li>
                 <li className=" mb-2 uppercase">
-                  <NavLink to="/dashboard/manageCourse">
+                  <NavLink to="/dashboard/manageService">
                    
-                    Manage course
+                    Manage Service
                   </NavLink>
                 </li>
                 <li className=" mb-2 uppercase">
-                  <NavLink to="/dashboard/allStudents">
-                    <FaUsers className="text-xl mr-2"></FaUsers> All Students
+                  <NavLink to="/dashboard/allUsers">
+                  All Users
+                  </NavLink>
+                </li>
+                <li className=" mb-2 uppercase">
+                  <NavLink to="/dashboard/allDoc">
+                      Add Doctors
+                  </NavLink>
+                </li>
+                <li className=" mb-2 uppercase">
+                  <NavLink to="/dashboard/manageDoc">
+                   
+                    Manage Doctors
                   </NavLink>
                 </li>
               </>
@@ -42,8 +53,9 @@ const Dashboard = () => {
             {isModerator && (
               <>
                 <li className=" mb-2 uppercase">
-                  <NavLink to="/dashboard/allUser">
-                    <FaUsers className="text-xl mr-2"></FaUsers> All Students
+                  <NavLink to="/dashboard/allPatients">
+                     All 
+                    Patients
                   </NavLink>
                 </li>
               </>
@@ -53,13 +65,13 @@ const Dashboard = () => {
               <>
                 {/* Panel for User */}
                 <li className=" mb-2 uppercase">
-                  <NavLink to="/dashboard/studentHome">
-                    Student Home
+                  <NavLink to="/dashboard/pHome">
+                  Patients Home
                   </NavLink>
                 </li>
                 <li className=" mb-2 uppercase">
-                  <NavLink to="/dashboard/myCourse">
-                    <FaBook className="text-xl mr-2 "></FaBook> My Course
+                  <NavLink to="/dashboard/myAppointment">
+                     My Appointment
                   </NavLink>
                 </li>
                 <li className=" mb-2 uppercase">
