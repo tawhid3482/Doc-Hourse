@@ -2,7 +2,7 @@ import {  } from "react-icons/fa6";
 import { NavLink, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
-    const isAdmin = true
+    const isAdmin = false
   const isModerator = false;
     return (
         <div>
@@ -75,7 +75,7 @@ const Dashboard = () => {
               <>
                 {/* Panel for User */}
                 <li className=" mb-2 uppercase">
-                  <NavLink to="/dashboard/pHome">
+                  <NavLink to="/dashboard/userHome">
                   Patients Home
                   </NavLink>
                 </li>
@@ -85,17 +85,14 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
                 <li className=" mb-2 uppercase">
-                  <NavLink to="/dashboard/cart">
+                  <NavLink to="/dashboard/myReviews">
                    
-                    My Cart{" "}
-                    <span className="text-yellow-500 text-lg">
-                    
-                    </span>
+                    My Reviews
                   </NavLink>
                 </li>
                 <li className=" mb-2 uppercase">
-                  <NavLink to="/dashboard/paymentHistory">
-                    Payment History
+                  <NavLink to="/dashboard/myHistory">
+                    My History
                   </NavLink>
                 </li>
               </>

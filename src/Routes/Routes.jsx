@@ -18,6 +18,9 @@ import AddDoc from "../Dashboard/AddDoc/AddDoc";
 import ManageDoc from "../Dashboard/AddDoc/ManageDoc";
 import AddSerProduct from "../Dashboard/AddSerPro/AddSerProduct";
 import ManagePro from "../Dashboard/AddSerPro/ManagePro";
+import UserHome from "../Dashboard/Users/UserHome";
+import MyReviews from "../Dashboard/Users/MyReviews";
+import MyHistory from "../Dashboard/Users/MyHistory";
 
 const Routes = createBrowserRouter([
   {
@@ -101,6 +104,23 @@ const Routes = createBrowserRouter([
       {
         path:'manageServicePro',
         element:<ManagePro></ManagePro>
+      },
+      // user
+      {
+        path:'userHome',
+        element:<UserHome></UserHome>
+      },
+      {
+        path:'myAppointment',
+        element:<myAppointment></myAppointment>
+      },
+      {
+        path:'myReviews',
+        element:<MyReviews></MyReviews>
+      },
+      {
+        path:'myHistory',
+        element:<MyHistory></MyHistory>
       },
     ]
   },
