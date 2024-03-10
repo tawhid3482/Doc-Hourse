@@ -2,7 +2,7 @@ import {  } from "react-icons/fa6";
 import { NavLink, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
-    const isAdmin = false
+    const isAdmin = true
   const isModerator = false;
     return (
         <div>
