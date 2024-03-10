@@ -37,7 +37,7 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
                 <li className=" mb-2 uppercase">
-                  <NavLink to="/dashboard/allDoc">
+                  <NavLink to="/dashboard/addDoc">
                       Add Doctors
                   </NavLink>
                 </li>
@@ -47,12 +47,12 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
                 <li className=" mb-2 uppercase">
-                  <NavLink to="/dashboard/addService">
+                  <NavLink to="/dashboard/AddServicePro">
                    Add Service Products
                   </NavLink>
                 </li>
                 <li className=" mb-2 uppercase">
-                  <NavLink to="/dashboard/manageService">
+                  <NavLink to="/dashboard/manageServicePro">
                    
                     Manage Service Product
                   </NavLink>

@@ -11,6 +11,13 @@ import Appointment from "../Appointment/Appointment";
 import ServiceProducts from "../Appointment/ServiceProducts";
 import Dashboard from "../Dashboard/Dashboard";
 import AdminHome from "../Dashboard/Admin/AdminHome";
+import AddService from "../Dashboard/AddService/AddService";
+import ManageService from "../Dashboard/AddService/ManageService";
+import AllUser from "../Dashboard/AllUsers/AllUser";
+import AddDoc from "../Dashboard/AddDoc/AddDoc";
+import ManageDoc from "../Dashboard/AddDoc/ManageDoc";
+import AddSerProduct from "../Dashboard/AddSerPro/AddSerProduct";
+import ManagePro from "../Dashboard/AddSerPro/ManagePro";
 
 const Routes = createBrowserRouter([
   {
@@ -66,7 +73,35 @@ const Routes = createBrowserRouter([
       {
         path:'adminHome',
         element:<AdminHome></AdminHome>
-      }
+      },
+      {
+        path:'addService',
+        element:<AddService></AddService>
+      },
+      {
+        path:'manageService',
+        element:<ManageService></ManageService>
+      },
+      {
+        path:'allUsers',
+        element:<AllUser></AllUser>
+      },
+      {
+        path:'addDoc',
+        element:<AddDoc></AddDoc>
+      },
+      {
+        path:'manageDoc',
+        element:<ManageDoc></ManageDoc>
+      },
+      {
+        path:'AddServicePro',
+        element:<AddSerProduct></AddSerProduct>
+      },
+      {
+        path:'manageServicePro',
+        element:<ManagePro></ManagePro>
+      },
     ]
   },
 ]);
