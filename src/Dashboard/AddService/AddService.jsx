@@ -16,7 +16,7 @@ const AddService = () => {
   const onSubmit = async (data) => {
     console.log(data);
     // 1st img host
-    const imageFile = { image: data.image[0], Image: data.insImage[0] };
+    const imageFile = { image: data.image[0]};
     const res = await axiosPublic.post(image_hosting_api, imageFile, {
       headers: {
         "content-type": "multipart/form-data",
@@ -26,25 +26,10 @@ const AddService = () => {
     if (res.data.success) {
       const courseItem = {
         name: data.name,
-        campus: data.campus,
-        courseId: data.courseId,
-        credit: data.credit,
-        dateRange: data.dateRange,
-        department: data.department,
-        description1: data.description1,
-        description2: data.description2,
-        description3: data.description3,
-        fee: parseFloat(data.fee),
         image: res.data.data.display_url,
-        insImage: data.insImage,
-        instructor: data.instructor,
-        level: data.level,
-        method: data.method,
-        scholarship: data.scholarship,
-        time: data.time,
-        semester: data.semester,
+        
       };
-      const courseRes = await axiosSecure.post("/department", courseItem);
+      const courseRes = await axiosSecure.post("/service", courseItem);
       console.log(courseRes.data);
       if (courseRes.data.insertedId) {
         Swal.fire({
@@ -66,271 +51,20 @@ const AddService = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <label className="form-control w-full my-2">
             <div className="label">
-              <span className="label-text">Course name*</span>
+              <span className="label-text">Service Name*</span>
             </div>
             <input
               {...register("name")}
               type="text"
-              placeholder="Course Name"
+              placeholder="Service Name"
               className="input input-bordered w-full"
             />
           </label>
 
-          <div className="flex gap-6">
-            <div className=" w-full my-2">
-              <label className="">
-                <div className="label">
-                  <span className="label-text">Course Fee*</span>
-                </div>
-                <input
-                  {...register("fee")}
-                  type="text"
-                  placeholder="Course fee"
-                  className="input input-bordered w-full"
-                />
-              </label>
-            </div>
-            <div className="w-full my-2">
-              <label className=" ">
-                <div className="label">
-                  <span className="label-text">Course id*</span>
-                </div>
-                <input
-                  {...register("courseId")}
-                  type="text"
-                  placeholder="Course id"
-                  className="input input-bordered w-full"
-                />
-              </label>
-            </div>
-          </div>
-
-          <div className="flex gap-6">
-            <div className=" w-full my-2">
-              <label className="">
-                <div className="label">
-                  <span className="label-text">Semester*</span>
-                </div>
-                <select
-                  defaultValue="default"
-                  className="select select-primary w-full "
-                  {...register("semester")}
-                >
-                  <option disabled value="default">
-                    Select Your Semester
-                  </option>
-                  <option value="1st">1st</option>
-                  <option value="3rd">3rd</option>
-                  <option value="5th">5th</option>
-                </select>
-              </label>
-            </div>
-            <div className="w-full my-2">
-              <label className=" ">
-                <div className="label">
-                  <span className="label-text">Department*</span>
-                </div>
-                <input
-                  {...register("department")}
-                  type="text"
-                  placeholder="Department"
-                  className="input input-bordered w-full"
-                />
-              </label>
-            </div>
-          </div>
-
-          <div className="flex gap-6">
-            <div className=" w-full my-2">
-              <label className="">
-                <div className="label">
-                  <span className="label-text">Course Instructor*</span>
-                </div>
-                <input
-                  {...register("instructor")}
-                  type="text"
-                  placeholder="Course Instructor"
-                  className="input input-bordered w-full"
-                />
-              </label>
-            </div>
-            <div className="w-full my-2">
-              <label className=" ">
-                <div className="label">
-                  <span className="label-text">Credit</span>
-                </div>
-                <input
-                  {...register("credit")}
-                  type="text"
-                  placeholder="Credit"
-                  className="input input-bordered w-full"
-                />
-              </label>
-            </div>
-          </div>
-
-          <div className="flex gap-6">
-            <div className=" w-full my-2">
-              <label className="">
-                <div className="label">
-                  <span className="label-text">Course Level*</span>
-                </div>
-                <input
-                  {...register("level")}
-                  type="text"
-                  placeholder="Course Level"
-                  className="input input-bordered w-full"
-                />
-              </label>
-            </div>
-            <div className="w-full my-2">
-              <label className=" ">
-                <div className="label">
-                  <span className="label-text">Campus</span>
-                </div>
-                <input
-                  {...register("campus")}
-                  type="text"
-                  placeholder="Campus"
-                  className="input input-bordered w-full"
-                />
-              </label>
-            </div>
-          </div>
-
-          <div className="flex gap-6">
-            <div className=" w-full my-2">
-              <label className="">
-                <div className="label">
-                  <span className="label-text">Method*</span>
-                </div>
-                <select
-                  defaultValue="default"
-                  className="select select-primary w-full "
-                  {...register("method")}
-                >
-                  <option disabled value="default">
-                    Select Your Method
-                  </option>
-                  <option value="online">Online</option>
-                  <option value="offline">Offline</option>
-                  <option value="both">Online & Offline both</option>
-                </select>
-              </label>
-            </div>
-            <div className="w-full my-2">
-              <label className=" ">
-                <div className="label">
-                  <span className="label-text">Class Time*</span>
-                </div>
-                <input
-                  {...register("time")}
-                  type="text"
-                  placeholder="Class Time"
-                  className="input input-bordered w-full"
-                />
-              </label>
-            </div>
-          </div>
-
-          <div className="flex gap-6">
-            <div className=" w-full my-2">
-              <label className="">
-                <div className="label">
-                  <span className="label-text">Date Range*</span>
-                </div>
-                <input
-                  {...register("dateRange")}
-                  type="text"
-                  placeholder="Date Range"
-                  className="input input-bordered w-full"
-                />
-              </label>
-            </div>
-            <div className="w-full my-2">
-              <label className=" ">
-                <div className="label">
-                  <span className="label-text">About Course Description*</span>
-                </div>
-
-                <textarea
-                  {...register("description1")}
-                  className="textarea textarea-bordered w-full"
-                  placeholder="About Course Description"
-                ></textarea>
-              </label>
-            </div>
-          </div>
-
-          <div className="flex gap-6">
-            <div className=" w-full my-2">
-              <label className=" ">
-                <div className="label">
-                  <span className="label-text">
-                    About Course Finish Description*
-                  </span>
-                </div>
-
-                <textarea
-                  {...register("description2")}
-                  className="textarea textarea-bordered w-full"
-                  placeholder="About Course Finish Description"
-                ></textarea>
-              </label>
-            </div>
-            <div className="w-full my-2">
-              <label className=" ">
-                <div className="label">
-                  <span className="label-text">
-                    About Course Instructor Description*
-                  </span>
-                </div>
-
-                <textarea
-                  {...register("description3")}
-                  className="textarea textarea-bordered w-full"
-                  placeholder="About Course Instructor Description"
-                ></textarea>
-              </label>
-            </div>
-          </div>
-
-          <div className="flex gap-6">
-            <div className=" w-full my-2">
-              <label className=" ">
-                <div className="label">
-                  <span className="label-text">
-                    About Scholarship Description*
-                  </span>
-                </div>
-
-                <textarea
-                  {...register("scholarship")}
-                  className="textarea textarea-bordered w-full"
-                  placeholder="About Scholarship Description"
-                ></textarea>
-              </label>
-            </div>
-            <div className=" w-full my-2">
-              <label className=" ">
-                <div className="label">
-                  <span className="label-text">Instructor Image*</span>
-                </div>
-
-                <input
-                  {...register("insImage")}
-                  type="text"
-                  placeholder="Instructor Image URL"
-                  className="input input-bordered w-full"
-                />
-              </label>
-            </div>
-          </div>
-
           <div className="form-control w-full">
             <label className=" ">
               <div className="label">
-                <span className="label-text">Course Image*</span>
+                <span className="label-text">Doctor Image*</span>
               </div>
 
               <input

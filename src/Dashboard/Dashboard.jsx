@@ -107,27 +107,16 @@ const Dashboard = () => {
               </NavLink>
             </li>
             <li className=" mb-2 uppercase">
-              <NavLink to="/page">
-                 Page
+              <NavLink to="/appointment">
+                 appointment
               </NavLink>
             </li>
             <li className=" mb-2 uppercase">
-              <NavLink to="/course">
-                Course
+              <NavLink to="/contact">
+                contact
               </NavLink>
             </li>
-            <li className=" mb-2 uppercase">
-              <NavLink to="/athletics">
-              
-                Athletics
-              </NavLink>
-            </li>
-            <li className=" mb-2 uppercase">
-              <NavLink to="/university">
-               
-                University Life
-              </NavLink>
-            </li>
+           
           </ul>
         </div>
         <div className="flex-1">
