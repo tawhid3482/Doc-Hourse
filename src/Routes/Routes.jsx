@@ -10,6 +10,7 @@ import Contact from "../Contact/Contact";
 import Appointment from "../Appointment/Appointment";
 import ServiceProducts from "../Appointment/ServiceProducts";
 import Dashboard from "../Dashboard/Dashboard";
+import AdminHome from "../Dashboard/Admin/AdminHome";
 
 const Routes = createBrowserRouter([
   {
@@ -63,7 +64,8 @@ const Routes = createBrowserRouter([
     errorElement:<ErrorPage></ErrorPage>,
     children:[
       {
-        
+        path:'adminHome',
+        element:<AdminHome></AdminHome>
       }
     ]
   },

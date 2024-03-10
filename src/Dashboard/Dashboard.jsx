@@ -2,8 +2,8 @@ import {  } from "react-icons/fa6";
 import { NavLink, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
-    const isAdmin = false
-  const isModerator = true;
+    const isAdmin = true
+  const isModerator = false;
     return (
         <div>
             <div className="w-full h-16 bg-green-800 flex items-center text-white p-5">
@@ -44,6 +44,17 @@ const Dashboard = () => {
                 <li className=" mb-2 uppercase">
                   <NavLink to="/dashboard/manageDoc"> 
                     Manage Doctors
+                  </NavLink>
+                </li>
+                <li className=" mb-2 uppercase">
+                  <NavLink to="/dashboard/addService">
+                   Add Service Products
+                  </NavLink>
+                </li>
+                <li className=" mb-2 uppercase">
+                  <NavLink to="/dashboard/manageService">
+                   
+                    Manage Service Product
                   </NavLink>
                 </li>
               </>
