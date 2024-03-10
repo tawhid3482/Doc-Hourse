@@ -24,12 +24,12 @@ const AddService = () => {
     });
     console.log(res.data);
     if (res.data.success) {
-      const courseItem = {
+      const docItem = {
         name: data.name,
         image: res.data.data.display_url,
         
       };
-      const courseRes = await axiosSecure.post("/service", courseItem);
+      const courseRes = await axiosSecure.post("/service", docItem);
       console.log(courseRes.data);
       if (courseRes.data.insertedId) {
         Swal.fire({
