@@ -4,8 +4,11 @@ import login from "../assets/login/login.png";
 import { FaGoogle } from "react-icons/fa6";
 import { useForm } from "react-hook-form";
 import UseAuth from "../Hooks/UseAuth";
+import Swal from "sweetalert2";
+import UseAxiosPublic from "../Axios/UseAxiosPublic";
 const SignUp = () => {
   const navigate = useNavigate();
+  const axiosPublic = UseAxiosPublic()
 
   const { createUser, updateUserProfile } = UseAuth();
 
@@ -27,11 +30,34 @@ const SignUp = () => {
       }, 2*1000);
         // console.log(data)
       
-        // const userInfo = {
-        //     namae: data.name,
-        //     email: data.email,
-        //     photo: data.photo,
-        //   }
+        const userInfo = {
+            namae: data.name,
+            email: data.email,
+            photo: data.photo,
+          }
+          axiosPublic.post("/users", userInfo).then((res) => {
+            if (res.data.insertedId){
+              // console.log('users')
+
+              Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "You are register successfully",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+          }else{
+            Swal.fire({
+              position: "top-end",
+              icon: "error",
+              title: "Something wrong please try later",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          }
+         
+
+          });
       });
     });
   };
