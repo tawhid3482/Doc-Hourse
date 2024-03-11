@@ -1,5 +1,8 @@
 import Swal from "sweetalert2";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
+import UseAxiosPublic from "../../Axios/UseAxiosPublic";
+import UseAxiosSecure from "../../Axios/UseAxiosSecure";
+import { useForm } from "react-hook-form";
 
 const AddSerProduct = () => {
   const { register, handleSubmit } = useForm();
@@ -57,17 +60,44 @@ const AddSerProduct = () => {
           </label>
 
 
-        
+          <div className="flex gap-6">
+            <div className=" w-full my-2">
+              <label className="">
+                <div className="label">
+                  <span className="label-text">Service*</span>
+                </div>
+                <input
+              {...register("service")}
+              type="text"
+              placeholder="Under The Service Name"
+              className="input input-bordered w-full"
+            />
+              </label>
+            </div>
+            <div className="w-full my-2">
+              <label className=" ">
+                <div className="label">
+                  <span className="label-text">Time*</span>
+                </div>
+                <input
+                  {...register("time")}
+                  type="text"
+                  placeholder="Time"
+                  className="input input-bordered w-full"
+                />
+              </label>
+            </div>
+          </div>
 
 
           <div className="form-control w-full">
             <label className=" ">
               <div className="label">
-                <span className="label-text">Doctor Image*</span>
+                <span className="label-text">Service Image*</span>
               </div>
 
               <input
-                {...register("image")}
+                {...register("img")}
                 type="file"
                 className="file-input file-input-bordered file-input-secondary w-full "
               />
