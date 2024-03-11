@@ -23,7 +23,7 @@ const AddDoc = () => {
     });
     console.log(res.data);
     if (res.data.success) {
-      const courseItem = {
+      const docItem = {
         name: data.name,
         title: data.title,
         address: data.address,
@@ -34,15 +34,13 @@ const AddDoc = () => {
         specialist2: data.specialist2,
         about: data.about,
         image: res.data.data.display_url,
-        insImage: data.insImage,
-        instructor: data.instructor,
-        level: data.level,
-        method: data.method,
-        scholarship: data.scholarship,
-        time: data.time,
-        semester: data.semester,
+        // insImage: data.insImage,
+        services: data.services,
+        specializations: data.specializations,
+        awards: data.awards,
+       
       };
-      const courseRes = await axiosSecure.post("/department", courseItem);
+      const courseRes = await axiosSecure.post("/doctors", docItem);
       console.log(courseRes.data);
       if (courseRes.data.insertedId) {
         Swal.fire({
@@ -178,151 +176,82 @@ const AddDoc = () => {
             <div className="w-full my-2">
               <label className=" ">
                 <div className="label">
-                  <span className="label-text">About Doctor</span>
+                  <span className="label-text">Awards</span>
                 </div>
                 <input
+                  {...register("awards")}
+                  type="text"
+                  placeholder="Awards"
+                  className="input input-bordered w-full"
+                />
+              </label>
+            </div>
+          </div>
+
+          <div className="flex gap-6">
+            <div className=" w-full my-2">
+              <label className="">
+                <div className="label">
+                  <span className="label-text">Education*</span>
+                </div>
+                <input
+                  {...register("education")}
+                  type="text"
+                  placeholder="Doctor Education"
+                  className="input input-bordered w-full"
+                />
+              </label>
+            </div>
+            <div className="w-full my-2">
+              <label className=" ">
+                <div className="label">
+                  <span className="label-text">Services*</span>
+                </div>
+                <input
+                  {...register("services")}
+                  type="text"
+                  placeholder="Doctor Services"
+                  className="input input-bordered w-full"
+                />
+              </label>
+            </div>
+          </div>
+
+          <div className="flex gap-6">
+            <div className=" w-full my-2">
+              <label className="">
+                <div className="label">
+                  <span className="label-text">Specializations*</span>
+                </div>
+                <input
+                  {...register("specializations")}
+                  type="text"
+                  placeholder="Specializations"
+                  className="input input-bordered w-full"
+                />
+              </label>
+            </div>
+            <div className="w-full my-2">
+              <label className=" ">
+                <div className="label">
+                  <span className="label-text">About Doctor*</span>
+                </div>
+                
+                <textarea
                   {...register("about")}
-                  type="text"
-                  placeholder="about"
-                  className="input input-bordered w-full"
-                />
-              </label>
-            </div>
-          </div>
-
-          <div className="flex gap-6">
-            <div className=" w-full my-2">
-              <label className="">
-                <div className="label">
-                  <span className="label-text">Method*</span>
-                </div>
-                <select
-                  defaultValue="default"
-                  className="select select-primary w-full "
-                  {...register("method")}
-                >
-                  <option disabled value="default">
-                    Select Your Method
-                  </option>
-                  <option value="online">Online</option>
-                  <option value="offline">Offline</option>
-                  <option value="both">Online & Offline both</option>
-                </select>
-              </label>
-            </div>
-            <div className="w-full my-2">
-              <label className=" ">
-                <div className="label">
-                  <span className="label-text">Class Time*</span>
-                </div>
-                <input
-                  {...register("time")}
-                  type="text"
-                  placeholder="Class Time"
-                  className="input input-bordered w-full"
-                />
-              </label>
-            </div>
-          </div>
-
-          <div className="flex gap-6">
-            <div className=" w-full my-2">
-              <label className="">
-                <div className="label">
-                  <span className="label-text">Date Range*</span>
-                </div>
-                <input
-                  {...register("dateRange")}
-                  type="text"
-                  placeholder="Date Range"
-                  className="input input-bordered w-full"
-                />
-              </label>
-            </div>
-            <div className="w-full my-2">
-              <label className=" ">
-                <div className="label">
-                  <span className="label-text">About Course Description*</span>
-                </div>
-
-                <textarea
-                  {...register("description1")}
                   className="textarea textarea-bordered w-full"
-                  placeholder="About Course Description"
+                  placeholder="About Doctor"
                 ></textarea>
               </label>
             </div>
           </div>
 
-          <div className="flex gap-6">
-            <div className=" w-full my-2">
-              <label className=" ">
-                <div className="label">
-                  <span className="label-text">
-                    About Course Finish Description*
-                  </span>
-                </div>
-
-                <textarea
-                  {...register("description2")}
-                  className="textarea textarea-bordered w-full"
-                  placeholder="About Course Finish Description"
-                ></textarea>
-              </label>
-            </div>
-            <div className="w-full my-2">
-              <label className=" ">
-                <div className="label">
-                  <span className="label-text">
-                    About Course Instructor Description*
-                  </span>
-                </div>
-
-                <textarea
-                  {...register("description3")}
-                  className="textarea textarea-bordered w-full"
-                  placeholder="About Course Instructor Description"
-                ></textarea>
-              </label>
-            </div>
-          </div>
-
-          <div className="flex gap-6">
-            <div className=" w-full my-2">
-              <label className=" ">
-                <div className="label">
-                  <span className="label-text">
-                    About Scholarship Description*
-                  </span>
-                </div>
-
-                <textarea
-                  {...register("scholarship")}
-                  className="textarea textarea-bordered w-full"
-                  placeholder="About Scholarship Description"
-                ></textarea>
-              </label>
-            </div>
-            <div className=" w-full my-2">
-              <label className=" ">
-                <div className="label">
-                  <span className="label-text">Instructor Image*</span>
-                </div>
-
-                <input
-                  {...register("insImage")}
-                  type="text"
-                  placeholder="Instructor Image URL"
-                  className="input input-bordered w-full"
-                />
-              </label>
-            </div>
-          </div>
+         
 
           <div className="form-control w-full">
             <label className=" ">
               <div className="label">
-                <span className="label-text">Course Image*</span>
+                <span className="label-text">Doctor Image*</span>
               </div>
 
               <input
@@ -334,7 +263,7 @@ const AddDoc = () => {
           </div>
 
           <div className="my-5 text-center">
-            <button className="btn btn-secondary uppercase">Add Course</button>
+            <button className="btn btn-secondary uppercase">Add Doctor</button>
           </div>
         </form>
       </div>
