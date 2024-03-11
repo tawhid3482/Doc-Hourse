@@ -25,9 +25,11 @@ const AddSerProduct = () => {
     if (res.data.success) {
       const docItem = {
         name: data.name,
-        image: res.data.data.display_url,
+        service:data.service,
+        time: data.time,
+        img: res.data.data.display_url,
       };
-      const courseRes = await axiosSecure.post("/service", docItem);
+      const courseRes = await axiosSecure.post("/srProducts", docItem);
       console.log(courseRes.data);
       if (courseRes.data.insertedId) {
         Swal.fire({
