@@ -7,8 +7,8 @@ import { GrUpdate } from "react-icons/gr";
 import UseService from "../../Hooks/UseService";
 
 const ManageService = () => {
-    const [data,refetch] = UseService();
-  const axiosSecure = UseAxiosSecure()
+  const [data, refetch] = UseService();
+  const axiosSecure = UseAxiosSecure();
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -22,7 +22,7 @@ const ManageService = () => {
       if (result.isConfirmed) {
         axiosSecure.delete(`/service/${id}`).then((res) => {
           if (res.data.deletedCount > 0) {
-            refetch()
+            refetch();
             Swal.fire({
               title: "Deleted!",
               text: "Your file has been deleted.",
@@ -39,7 +39,9 @@ const ManageService = () => {
         <SectionTitle title={"Manage Service"}></SectionTitle>
       </div>
       <div className="">
-        <p className="text-2xl font-semibold">Total Course: {data?.length}</p>
+        <p className="text-2xl font-semibold">
+          Total Services: {data?.length}
+        </p>
       </div>
       <div className="">
         <div className="overflow-x-auto">
@@ -47,70 +49,51 @@ const ManageService = () => {
             {/* head */}
             <thead className="text-lg">
               <tr>
-                <th>
-                  No.
-                </th>
-                <th>
-                  Course Id
-                </th>
-                <th>Course Name</th>
-                <th>Instructor Name</th>
-                <th>fee</th>
+                <th>No.</th>
+                <th>Service Name</th>
                 <th>Update</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
-              {data?.map((course,index)=> <tr key={data?._id}>
-                <th>
-                  {index+1}
-                </th>
-                <th>
-                  {course.id}
-                </th>
-                <td>
-                  <div className="flex items-center gap-3">
-                    <div className="avatar">
-                      <div className="mask mask-squircle w-12 h-12">
-                        <img
-                          src={course.img2}
-                          alt="Avatar Tailwind CSS Component"
-                        />
+              {data?.map((services, index) => (
+                <tr key={data?._id}>
+                  <th>{index + 1}</th>
+                  <th>{services.id}</th>
+                  <td>
+                    <div className="flex items-center gap-3">
+                      <div className="avatar">
+                        <div className="mask mask-squircle w-12 h-12">
+                          <img
+                            src={services.img2}
+                            alt="Avatar Tailwind CSS Component"
+                          />
+                        </div>
+                      </div>
+                      <div>
+                        <div className="font-bold">{services.name}</div>
                       </div>
                     </div>
-                    <div>
-                      <div className="font-bold">{course.name}</div>
-                      <div className="text-sm opacity-50">{course.Department}</div>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  {course.Instructor}
-                  <br />
-                  <span className="badge badge-ghost badge-sm">
-                    {course.room}
-                  </span>
-                </td>
-                <td>$ {course.fee}</td>
+                  </td>
 
-                <td>
-                    <Link to={`/dashboard/update/${course._id}`}>
-                    <button className="btn "><GrUpdate className="text-xl text-purple-600"></GrUpdate></button>
+                  <td>
+                    <Link to={`/dashboard/update/${services._id}`}>
+                      <button className="btn ">
+                        <GrUpdate className="text-xl text-purple-600"></GrUpdate>
+                      </button>
                     </Link>
-                </td>
+                  </td>
 
-                <th>
-                <button
-                    onClick={() => handleDelete(course._id)}
-                    className="btn"
-                  >
-                    <FaTrash className="text-xl text-pink-600"></FaTrash>
-                  </button>
-                </th>
-              </tr>)}
-             
-             
-              
+                  <th>
+                    <button
+                      onClick={() => handleDelete(services._id)}
+                      className="btn"
+                    >
+                      <FaTrash className="text-xl text-pink-600"></FaTrash>
+                    </button>
+                  </th>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
