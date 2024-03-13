@@ -1,19 +1,19 @@
-import { useEffect } from "react";
-import { useState } from "react";
+
+import UseAxiosPublic from "../Axios/UseAxiosPublic";
+import { useQuery } from "@tanstack/react-query";
 
 const UseService = () => {
-    const [service, setService]=useState([])
-    const [loading,setLoading]=useState(true)
-    useEffect(()=>{
-        fetch('http://localhost:5000/service')
-        .then((res)=> res.json())
-        .then(data =>{
-            setService(data)
-            setLoading(false)
-            
-        })
-    },[])
-    return [service,loading]
+    const axiosPublic = UseAxiosPublic()
+    const {data,refetch} = useQuery({
+        queryKey:['department'],
+        queryFn: async()=>{
+            const res = await axiosPublic.get('/service')
+            return res.data
+        }
+    })
+    return [data,refetch]
+    
 };
+
 
 export default UseService;
