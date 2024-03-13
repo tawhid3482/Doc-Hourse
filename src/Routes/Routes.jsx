@@ -121,7 +121,7 @@ const Routes = createBrowserRouter([
       {
         path:'myHistory',
         element:<MyHistory></MyHistory>
-      },
+      }
     ]
   },
 ]);
