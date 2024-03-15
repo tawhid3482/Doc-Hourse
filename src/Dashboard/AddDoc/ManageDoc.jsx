@@ -8,7 +8,8 @@ import UseDoc from "../../Hooks/UseDoc/UseDoc";
 
 
 const ManageDoc = () => {
-  const [doc, refetch] = UseDoc();
+  const [data, refetch] = UseDoc();
+  console.log(data)
   const axiosSecure = UseAxiosSecure();
   const handleDelete = (id) => {
     Swal.fire({
@@ -21,8 +22,8 @@ const ManageDoc = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        axiosSecure.delete(`/service/${id}`).then((res) => {
-          if (res.doc.deletedCount > 0) {
+        axiosSecure.delete(`/doctors/${id}`).then((res) => {
+          if (res.data.deletedCount > 0) {
             refetch();
             Swal.fire({
               title: "Deleted!",
@@ -43,7 +44,7 @@ const ManageDoc = () => {
      
       <div className="">
         <p className="text-2xl font-semibold">
-          Total : {doc?.length}
+          Total Doctors: {data?.length}
         </p>
       </div>
       <div className="">
@@ -53,22 +54,21 @@ const ManageDoc = () => {
             <thead className="text-lg">
               <tr>
                 <th>No.</th>
-                <th>Service Name</th>
+                <th>Doctor Name</th>
                 <th>Update</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
-              {doc?.map((services, index) => (
-                <tr key={doc?._id}>
+              {data?.map((services, index) => (
+                <tr key={data?._id}>
                   <th>{index + 1}</th>
-                  <th>{services.id}</th>
                   <td>
                     <div className="flex items-center gap-3">
                       <div className="avatar">
                         <div className="mask mask-squircle w-12 h-12">
                           <img
-                            src={services.img2}
+                            src={services.img}
                             alt="Avatar Tailwind CSS Component"
                           />
                         </div>

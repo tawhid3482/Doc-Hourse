@@ -3,14 +3,14 @@ import UseAxiosPublic from "../../Axios/UseAxiosPublic";
 
 const UseDoc = () => {
     const axiosPublic = UseAxiosPublic()
-    const {doc,refetch} = useQuery({
-        queryKey:['department'],
+    const {data,refetch} = useQuery({
+        queryKey:['doctors'],
         queryFn: async()=>{
-            const res = await axiosPublic.get('/service')
+            const res = await axiosPublic.get('/doctors')
             return res.data
         }
     })
-    return [doc,refetch]
+    return [data,refetch]
 };
 
 export default UseDoc;
