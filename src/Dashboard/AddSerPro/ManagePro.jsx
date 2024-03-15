@@ -4,7 +4,7 @@ import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 import UseSRProducts from "../../Hooks/UseSRProducts";
 import { FaTrash } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-import { GrUpdate } from "react-icons/gr";
+import { GrUpdate } from "react-icons/gr"
 
 
 const ManagePro = () => {
