@@ -59,13 +59,12 @@ const ManageService = () => {
               {data?.map((services, index) => (
                 <tr key={data?._id}>
                   <th>{index + 1}</th>
-                  <th>{services.id}</th>
                   <td>
                     <div className="flex items-center gap-3">
                       <div className="avatar">
                         <div className="mask mask-squircle w-12 h-12">
                           <img
-                            src={services.img2}
+                            src={services.img}
                             alt="Avatar Tailwind CSS Component"
                           />
                         </div>
