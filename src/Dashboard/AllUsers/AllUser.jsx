@@ -1,19 +1,13 @@
 import Swal from "sweetalert2";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 import UseAxiosSecure from "../../Axios/UseAxiosSecure";
-import { useQuery } from "@tanstack/react-query";
 import { FaTrash, FaUsers } from "react-icons/fa6";
+import UseAllUser from "../../Hooks/UseAllUser";
 
 const AllUser = () => {
   const axiosSecure = UseAxiosSecure();
-  const { data, refetch } = useQuery({
-    queryKey: ["users"],
-    queryFn: async () => {
-      const res = await axiosSecure.get("/users");
-      return res.data;
-    },
-  });
-
+ const [data,refetch]=UseAllUser()
+console.log(data)
   const handleAdmin = (user) => {
     axiosSecure.patch(`/users/admin/${user._id}`).then((res) => {
       if (res.data.modifiedCount > 0) {
