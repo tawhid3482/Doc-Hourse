@@ -24,21 +24,21 @@ const SignUp = () => {
       const loggedUser = result.user;
       console.log(loggedUser);
       updateUserProfile(data.name, data.photo).then(() => {
-        navigate("/");
-        setTimeout(() => {
-          window.location.reload();  
-      }, 2*1000);
+       
         // console.log(data)
       
         const userInfo = {
-            namae: data.name,
+            name: data.name,
             email: data.email,
             photo: data.photo,
           }
           axiosPublic.post("/users", userInfo).then((res) => {
             if (res.data.insertedId){
               // console.log('users')
-
+              navigate("/");
+              setTimeout(() => {
+                window.location.reload();  
+            }, 2*1000);
               Swal.fire({
                 position: "top-end",
                 icon: "success",
