@@ -1,9 +1,9 @@
 import {  } from "react-icons/fa6";
 import { NavLink, Outlet } from "react-router-dom";
-import UseAdmin from "../Hooks/UseAdmin";
+// import UseAdmin from "../Hooks/UseAdmin";
 
 const Dashboard = () => {
-    const isAdmin = UseAdmin()
+    const isAdmin = true
   const isModerator = false;
   console.log(isAdmin)
     return (
