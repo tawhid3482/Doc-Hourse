@@ -21,7 +21,7 @@ const ManagePro = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        axiosSecure.delete(`/service/${id}`).then((res) => {
+        axiosSecure.delete(`/srProducts/${id}`).then((res) => {
           if (res.data.deletedCount > 0) {
             refetch();
             Swal.fire({

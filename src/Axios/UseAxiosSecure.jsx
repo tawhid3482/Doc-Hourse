@@ -11,7 +11,7 @@ const UseAxiosSecure = () => {
   axiosSecure.interceptors.request.use(
     function (config) {
       const token = localStorage.getItem("access-token");
-      console.log("tumar token",token);
+      // console.log("tumar token",token);
       config.headers.authorization = `Bearer ${token}`;
       // Do something before request is sent
       return config;

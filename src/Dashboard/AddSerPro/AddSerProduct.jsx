@@ -1,8 +1,8 @@
 import Swal from "sweetalert2";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 import UseAxiosPublic from "../../Axios/UseAxiosPublic";
-import UseAxiosSecure from "../../Axios/UseAxiosSecure";
 import { useForm } from "react-hook-form";
+import UseAxiosSecure from "../../Axios/UseAxiosSecure";
 
 const AddSerProduct = () => {
   const { register, handleSubmit } = useForm();
@@ -10,12 +10,12 @@ const AddSerProduct = () => {
   const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
   const axiosPublic = UseAxiosPublic();
-  const axiosSecure = UseAxiosSecure();
+  const axiosSecure = UseAxiosSecure()
 
   const onSubmit = async (data) => {
     console.log(data);
     // 1st img host
-    const imageFile = { image: data.image[0] };
+    const imageFile = { image: data.image[0], };
     const res = await axiosPublic.post(image_hosting_api, imageFile, {
       headers: {
         "content-type": "multipart/form-data",
@@ -27,7 +27,7 @@ const AddSerProduct = () => {
         name: data.name,
         service:data.service,
         time: data.time,
-        img: res.data.data.display_url,
+        image: res.data.data.display_url,
       };
       const courseRes = await axiosSecure.post("/srProducts", docItem);
       console.log(courseRes.data);
@@ -39,6 +39,7 @@ const AddSerProduct = () => {
           showConfirmButton: false,
           timer: 1500,
         });
+      
       }
     }
   };
@@ -99,7 +100,7 @@ const AddSerProduct = () => {
               </div>
 
               <input
-                {...register("img")}
+                {...register("image")}
                 type="file"
                 className="file-input file-input-bordered file-input-secondary w-full "
               />

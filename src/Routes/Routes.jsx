@@ -21,6 +21,7 @@ import ManagePro from "../Dashboard/AddSerPro/ManagePro";
 import UserHome from "../Dashboard/Users/UserHome";
 import MyReviews from "../Dashboard/Users/MyReviews";
 import MyHistory from "../Dashboard/Users/MyHistory";
+import AdminRoutes from "./AdminRoutes";
 
 const Routes = createBrowserRouter([
   {
@@ -75,35 +76,34 @@ const Routes = createBrowserRouter([
     children:[
       {
         path:'adminHome',
-        element:<AdminHome></AdminHome>
+        element:<AdminRoutes><AdminHome></AdminHome></AdminRoutes>
       },
       {
         path:'addService',
-        element:<AddService></AddService>
+        element:<AdminRoutes><AddService></AddService></AdminRoutes>
       },
       {
         path:'manageService',
-        element:<ManageService></ManageService>
+        element:<AdminRoutes><ManageService></ManageService></AdminRoutes>
       },
       {
         path:'allUsers',
-        element:<AllUser></AllUser>
+        element:<AdminRoutes><AllUser></AllUser></AdminRoutes>
       },
       {
         path:'addDoc',
-        element:<AddDoc></AddDoc>
+        element:<AdminRoutes><AddDoc></AddDoc></AdminRoutes>
       },
       {
         path:'manageDoc',
-        element:<ManageDoc></ManageDoc>
+        element:<AdminRoutes><ManageDoc></ManageDoc></AdminRoutes>
       },
       {
         path:'AddServicePro',
-        element:<AddSerProduct></AddSerProduct>
-      },
+        element:<AdminRoutes><AddSerProduct></AddSerProduct></AdminRoutes>      },
       {
         path:'manageServicePro',
-        element:<ManagePro></ManagePro>
+        element:<AdminRoutes><ManagePro></ManagePro></AdminRoutes>
       },
       // user
       {
