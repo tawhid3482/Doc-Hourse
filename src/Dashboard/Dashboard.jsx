@@ -5,6 +5,7 @@ import UseAdmin from "../Hooks/UseAdmin";
 const Dashboard = () => {
     const isAdmin = UseAdmin()
   const isModerator = false;
+  console.log(isAdmin)
     return (
         <div>
             <div className="w-full h-16 bg-green-800 flex items-center text-white p-5">

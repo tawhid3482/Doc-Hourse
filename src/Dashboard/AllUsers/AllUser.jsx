@@ -6,8 +6,8 @@ import UseAllUser from "../../Hooks/UseAllUser";
 
 const AllUser = () => {
   const axiosSecure = UseAxiosSecure();
- const [data,refetch]=UseAllUser()
-console.log(data)
+  const [data, refetch] = UseAllUser();
+  console.log(data);
   const handleAdmin = (user) => {
     axiosSecure.patch(`/users/admin/${user._id}`).then((res) => {
       if (res.data.modifiedCount > 0) {

@@ -1,21 +1,18 @@
 import { Link, useNavigate } from "react-router-dom";
 import back from "../assets/login/back.png";
 import login from "../assets/login/login.png";
-import { FaGoogle } from "react-icons/fa6";
 import { useForm } from "react-hook-form";
 import UseAuth from "../Hooks/UseAuth";
 import Swal from "sweetalert2";
 import UseAxiosPublic from "../Axios/UseAxiosPublic";
+import GoogleLogin from "../Login/GoogleLogin";
 const SignUp = () => {
   const navigate = useNavigate();
-  const axiosPublic = UseAxiosPublic()
-
+  const axiosPublic = UseAxiosPublic();
   const { createUser, updateUserProfile } = UseAuth();
-
   const {
     register,
     handleSubmit,
-    
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
@@ -24,29 +21,27 @@ const SignUp = () => {
       const loggedUser = result.user;
       console.log(loggedUser);
       updateUserProfile(data.name, data.photo).then(() => {
-       
         // console.log(data)
-      
         const userInfo = {
-            name: data.name,
-            email: data.email,
-            photo: data.photo,
-          }
-          axiosPublic.post("/users", userInfo).then((res) => {
-            if (res.data.insertedId){
-              // console.log('users')
-              navigate("/");
-              setTimeout(() => {
-                window.location.reload();  
-            }, 2*1000);
-              Swal.fire({
-                position: "top-end",
-                icon: "success",
-                title: "You are register successfully",
-                showConfirmButton: false,
-                timer: 1500,
-              });
-          }else{
+          name: data.name,
+          email: data.email,
+          photo: data.photo,
+        };
+        axiosPublic.post("/users", userInfo).then((res) => {
+          if (res.data.insertedId) {
+            // console.log('users')
+            navigate("/");
+            setTimeout(() => {
+              window.location.reload();
+            }, 2 * 1000);
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "You are register successfully",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          } else {
             Swal.fire({
               position: "top-end",
               icon: "error",
@@ -55,9 +50,7 @@ const SignUp = () => {
               timer: 1500,
             });
           }
-         
-
-          });
+        });
       });
     });
   };
@@ -100,7 +93,6 @@ const SignUp = () => {
                   type="text"
                   placeholder="Your Photo "
                   className="input input-bordered"
-                  
                 />
                 {errors.photo && (
                   <span className="text-red-500">
@@ -154,10 +146,8 @@ const SignUp = () => {
 
             <div className="text-center my-3">
               <div className=" flex justify-center items-center gap-4">
-                <button className="btn btn-warning">
-                  <FaGoogle className="text-3xl text-green-600"></FaGoogle>
-                  <p className="text-xl font-bold text-white">Google</p>
-                </button>
+                <GoogleLogin></GoogleLogin>
+               
               </div>
             </div>
           </div>

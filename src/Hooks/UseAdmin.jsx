@@ -10,7 +10,7 @@ const UseAdmin = () => {
         enabled: !loading,
         queryFn: async()=>{
             const res = await axiosSecure.get(`/users/admin/${user.email}`)
-            return res.data?.admin
+            return res?.data?.admin
         }
     })
     return [isAdmin,isAdminLoading]

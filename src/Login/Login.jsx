@@ -1,9 +1,9 @@
 import { useForm } from "react-hook-form";
-import { FaGoogle } from "react-icons/fa6";
 import back from "../assets/login/back.png";
 import login from "../assets/login/login.png";
 import { Link, useNavigate } from "react-router-dom";
 import UseAuth from "../Hooks/UseAuth";
+import GoogleLogin from "./GoogleLogin";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -89,10 +89,8 @@ const Login = () => {
 
             <div className="text-center my-3">
               <div className=" flex justify-center items-center gap-4">
-                <button className="btn btn-warning">
-                  <FaGoogle className="text-3xl text-green-600"></FaGoogle>
-                  <p className="text-xl font-bold text-white">Google</p>
-                </button>
+              <GoogleLogin></GoogleLogin>
+
               </div>
             </div>
           </div>
