@@ -1,11 +1,11 @@
 import {  } from "react-icons/fa6";
 import { NavLink, Outlet } from "react-router-dom";
-// import UseAdmin from "../Hooks/UseAdmin";
+import UseAdmin from "../Hooks/UseAdmin";
 
 const Dashboard = () => {
-    const isAdmin = true
+    const isAdmin = UseAdmin()
   const isModerator = false;
-  console.log(isAdmin)
+  // console.log(isAdmin)
     return (
         <div>
             <div className="w-full h-16 bg-green-800 flex items-center text-white p-5">
