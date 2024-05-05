@@ -36,7 +36,7 @@ const Feedback = () => {
              <div className="flex gap-5 items-center justify-around p-10">
                 <div className="flex items-center gap-5">
                 <div className="">
-                  <img src={review?.img} className="rounded-full w-32 h-32" alt="" />
+                  <img src={review?.image} className="rounded-full w-32 h-32" alt="" />
                 </div>
                 <div className="">
                   <p className="text-xl font-bold">{review?.name}</p>
