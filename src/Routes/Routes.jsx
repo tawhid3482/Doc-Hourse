@@ -7,7 +7,6 @@ import ErrorPage from "../Error/ErrorPage";
 import DocDetails from "../Home/Doctor/DocDetails";
 import PrivateProvider from "./PrivateProvider";
 import Contact from "../Contact/Contact";
-import Appointment from "../Appointment/Appointment";
 import ServiceProducts from "../Appointment/ServiceProducts";
 import Dashboard from "../Dashboard/Dashboard";
 import AdminHome from "../Dashboard/Admin/AdminHome";
@@ -22,6 +21,8 @@ import UserHome from "../Dashboard/Users/UserHome";
 import MyReviews from "../Dashboard/Users/MyReviews";
 import MyHistory from "../Dashboard/Users/MyHistory";
 import AdminRoutes from "./AdminRoutes";
+import Appointment from "../Appointment/Appointment";
+import YourAppointment from "../Dashboard/Users/YourAppointment";
 
 const Routes = createBrowserRouter([
   {
@@ -111,8 +112,8 @@ const Routes = createBrowserRouter([
         element:<UserHome></UserHome>
       },
       {
-        path:'myAppointment',
-        element:<myAppointment></myAppointment>
+        path:'myAppointments',
+        element:<YourAppointment></YourAppointment>
       },
       {
         path:'myReviews',
