@@ -1,18 +1,20 @@
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/Screenshot_2024-02-17_192626-removebg-preview.png";
 import UseAuth from "../../Hooks/UseAuth";
+import UseAdmin from "../../Hooks/UseAdmin";
 const Navber = () => {
   const { user, logoutUser } = UseAuth();
+  const [isAdmin] = UseAdmin();
   const navOptions = (
     <>
       <li>
-        <Link to='/'>Home</Link>
+        <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to='/appointment'>Appointment</Link>
+        <Link to="/appointment">Appointment</Link>
       </li>
       <li>
-        <Link to='/contact'>Contact</Link>
+        <Link to="/contact">Contact</Link>
       </li>
     </>
   );
@@ -54,7 +56,7 @@ const Navber = () => {
         <div className="navbar-end">
           {user ? (
             <>
-            <div className="dropdown dropdown-end">
+              <div className="dropdown dropdown-end">
                 <div
                   tabIndex={0}
                   role="button"
@@ -72,26 +74,26 @@ const Navber = () => {
                   className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
                 >
                   <li>
-                    <a className="">
-                      {
-                        user?.displayName
-                      }
-                    </a>
+                    <a className="">{user?.displayName}</a>
                   </li>
+                  {isAdmin ? (
+                    <li>
+                      <Link to="/dashboard/adminHome">Dashboard</Link>
+                    </li>
+                  ) : (
+                    <li>
+                      <Link to="/dashboard/userHome">Dashboard</Link>
+                    </li>
+                  )}
                   <li>
-                    <Link to='/dashboard'>Dashboard</Link>
-                  </li>
-                  <li>
-                    <a onClick={logoutUser} >Logout</a>
+                    <a onClick={logoutUser}>Logout</a>
                   </li>
                 </ul>
               </div>
-             
             </>
           ) : (
             <>
-             
-             <Link to="/login">
+              <Link to="/login">
                 <button className="btn uppercase">login</button>
               </Link>
             </>
