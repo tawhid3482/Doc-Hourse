@@ -8,15 +8,14 @@ import UseAuth from "../../Hooks/UseAuth";
 
 const MyReviews = () => {
   const { user } = UseAuth();
+  console.log(user)
   const { register, handleSubmit } = useForm();
   const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
   const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
   const axiosPublic = UseAxiosPublic();
-//   const axiosSecure = UseAxiosSecure();
 
   const onSubmit = async (data) => {
-    console.log(data);
     // 1st img host
     const imageFile = { image: data.image[0] };
     const res = await axiosPublic.post(image_hosting_api, imageFile, {
@@ -24,7 +23,6 @@ const MyReviews = () => {
         "content-type": "multipart/form-data",
       },
     });
-    console.log(res.data);
     if (res.data.success) {
       const feedBackItem = {
         name: data.name,
@@ -33,7 +31,7 @@ const MyReviews = () => {
         image: res.data.data.display_url,
       };
       const feed = await axiosPublic.post("/feedback", feedBackItem);
-      console.log(feed.data);
+      // console.log(feed.data);
       if (feed.data.insertedId) {
         Swal.fire({
           position: "top-end",
@@ -60,7 +58,6 @@ const MyReviews = () => {
                 <span className="label-text">Your Name*</span>
               </div>
               <input
-                defaultValue={user?.dispalyName}
                 {...register("name")}
                 type="text"
                 placeholder="Your Name"
