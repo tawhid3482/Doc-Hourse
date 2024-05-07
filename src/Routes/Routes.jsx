@@ -66,7 +66,7 @@ const Routes = createBrowserRouter([
           </PrivateProvider>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/srProducts/${params.name}`),
+          fetch(`https://doc-house-server-two.vercel.app/srProducts/${params.name}`),
       },
     ],
   },

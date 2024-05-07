@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import UseAuth from "../Hooks/UseAuth";
 
 const axiosSecure = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://doc-house-server-two.vercel.app",
 });
 const UseAxiosSecure = () => {
   const navigate = useNavigate();

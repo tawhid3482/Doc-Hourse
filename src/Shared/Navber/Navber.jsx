@@ -86,7 +86,7 @@ const Navber = () => {
                     </li>
                   )}
                   <li>
-                    <a onClick={logoutUser}>Logout</a>
+                    <a onClick={logoutUser}>Logout </a>
                   </li>
                 </ul>
               </div>

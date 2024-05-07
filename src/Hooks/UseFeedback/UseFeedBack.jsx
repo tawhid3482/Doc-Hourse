@@ -5,7 +5,7 @@ const UseFeedBack = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(()=>{
-        fetch('http://localhost:5000/feedback')
+        fetch('https://doc-house-server-two.vercel.app/feedback')
         .then(res =>res.json())
         .then(data => {
             setfeedback(data)
