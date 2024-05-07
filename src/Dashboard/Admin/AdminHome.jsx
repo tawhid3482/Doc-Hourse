@@ -20,7 +20,7 @@ const AdminHome = () => {
   return (
     <div>
       <Helmet>
-        <title>Doc-House | ADMIN HOME</title>
+        <title>Doc-House | Admin Home</title>
       </Helmet>
       <div className="text-center my-4">
         <SectionTitle title={"Admin Home"}></SectionTitle>

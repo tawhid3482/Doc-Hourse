@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import UseAuth from "../../Hooks/UseAuth";
 
 const UserHome = () => {
@@ -8,6 +9,9 @@ const UserHome = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Doc-House | Patient Home</title>
+      </Helmet>
       <div className="flex-col lg:flex-row lg:flex lg:justify-between gap-5 ">
         <div className="w-full my-5  p-2 ">
           <div className="flex justify-between  gap-20 items-center">
