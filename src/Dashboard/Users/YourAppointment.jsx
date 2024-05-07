@@ -2,6 +2,7 @@ import Swal from "sweetalert2";
 import UseAxiosSecure from "../../Axios/UseAxiosSecure";
 import UseAppointment from "../../Hooks/UseAppointment";
 import { FaTrash } from "react-icons/fa6";
+import { Helmet } from "react-helmet-async";
 
 const YourAppointment = () => {
   const [data, refetch] = UseAppointment();
@@ -35,7 +36,9 @@ const YourAppointment = () => {
 
   return (
     <div>
-      
+      <Helmet>
+        <title>Doc-House | Patient Appointment</title>
+      </Helmet>
 
       {data ? (
         <div className="overflow-x-auto">
