@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 import { MdOutlineLibraryAdd } from "react-icons/md";
 import UseAuth from "../../Hooks/UseAuth";
+import { Helmet } from "react-helmet-async";
 
 const MyReviews = () => {
   const { user } = UseAuth();
@@ -46,6 +47,9 @@ const MyReviews = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Doc-House | Patient Reviews</title>
+      </Helmet>
       <div className="text-center my-4">
         <SectionTitle title={"Add Service"}></SectionTitle>
       </div>
