@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 import UseAppointment from "../../Hooks/UseAppointment";
 import { FaTrash } from "react-icons/fa6";
+import Swal from "sweetalert2";
 
 const MyHistory = () => {
   const data = UseAppointment()
