@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 import UseAxiosSecure from "../../Axios/UseAxiosSecure";
 
 const MyHistory = () => {
-  const data = UseAppointment()
+  const [data,refetch] = UseAppointment()
   console.log(data)
   const axiosSecure = UseAxiosSecure()
   const handleDelete = (id) => {
