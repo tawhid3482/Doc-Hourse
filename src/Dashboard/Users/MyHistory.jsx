@@ -50,7 +50,6 @@ const MyHistory = () => {
             <thead className="text-lg font-bold">
               <tr>
                 <th>#</th>
-                <th>Name</th>
                 <th>Service</th>
                 <th>Time</th>
                 <th>Action</th>
@@ -60,14 +59,7 @@ const MyHistory = () => {
               {data?.map((appoint, index) => (
                 <tr key={appoint._id}>
                   <th>{index + 1}</th>
-                  <td>
-                    <div className="flex items-center gap-3">
-                      
-                      <div>
-                        <div className="font-bold">{appoint?.name}</div>
-                      </div>
-                    </div>
-                  </td>
+                 
                   <td>{appoint?.serviceName}</td>
                   <td>{appoint?.time}</td>
                   <th>
