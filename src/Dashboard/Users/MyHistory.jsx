@@ -3,10 +3,12 @@ import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 import UseAppointment from "../../Hooks/UseAppointment";
 import { FaTrash } from "react-icons/fa6";
 import Swal from "sweetalert2";
+import UseAxiosSecure from "../../Axios/UseAxiosSecure";
 
 const MyHistory = () => {
   const data = UseAppointment()
   console.log(data)
+  const axiosSecure = UseAxiosSecure()
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
