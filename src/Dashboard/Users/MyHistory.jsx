@@ -1,7 +1,10 @@
 import { Helmet } from "react-helmet-async";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
+import UseAppointment from "../../Hooks/UseAppointment";
 
 const MyHistory = () => {
+  const data = UseAppointment()
+  console.log(data)
   return (
     <div>
       <Helmet>
